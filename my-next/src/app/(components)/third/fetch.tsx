@@ -20,7 +20,7 @@ export default  function Fetch() {
   return (
       <>
       {loading? <Loading/>:null}
-      <ThirdClient title={data[0].name} />
+      <ThirdClient title={String(data[0].name)} />
       </>
   )
 

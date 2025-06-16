@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 interface CounterState {
   value: number;
-  data: {[key: string]: any}[];
+  data: {[key: string]: string|number|boolean|unknown[]}[];
   loading: boolean;
 }
 

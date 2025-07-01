@@ -127,7 +127,7 @@ export default function Home() {
       <div
         className={`cllection flex py-12 px-3 justify-center bg-[url(../images/banner-1.jpg)] bg-no-repeat bg-cover bg-center`}
       >
-        <div className="slider basis-full text-center text-black">
+        <div className="slider basis-[30%] text-center text-black overflow-hidden">
           <Carousel
             opts={{
               align: "start",
@@ -140,7 +140,7 @@ export default function Home() {
             ]}
           >
             <CarouselContent>
-              <CarouselItem>
+              <CarouselItem className="w-fit">
                 <p className="text-2xl text-red-500">The Chloe Collection</p>
                 <h1 className="font-[cookie,cursive] text-4xl sm:text-6xl my-3">
                   The Project Jacket
@@ -152,7 +152,7 @@ export default function Home() {
                   Shop Now
                 </Link>
               </CarouselItem>
-              <CarouselItem>
+              <CarouselItem className="w-fit">
                 <p className="text-2xl text-red-500">The Chloe Collection</p>
                 <h1 className="font-[cookie,cursive] text-4xl sm:text-6xl  my-3">
                   The Project Jacket
@@ -164,7 +164,7 @@ export default function Home() {
                   Shop Now
                 </Link>
               </CarouselItem>
-              <CarouselItem>
+              <CarouselItem className="w-fit">
                 <p className="text-2xl text-red-500">The Chloe Collection</p>
                 <h1 className="font-[cookie,cursive] text-4xl sm:text-6xl  my-3">
                   The Project Jacket

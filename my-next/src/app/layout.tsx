@@ -45,7 +45,6 @@ export default async function RootLayout({
   const cookieTheme: RequestCookie | undefined = cookieStore.get("theme");
 
   const theme: string = cookieTheme ? cookieTheme.value : "";
-
   const locale = await getLocale();
   return (
     <html

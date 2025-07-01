@@ -106,10 +106,10 @@ export default function Footer() {
               e.preventDefault();
             }}
             action=""
-            className="rounded-full border-2 border-gray-300 flex justify-between p-2 max-sm:flex-col"
+            className="sm:rounded-full sm:border-2 sm:border-gray-300 flex justify-between p-2 max-sm:flex-col"
           >
             <input
-              className="focus:outline-none p-2 text-gray-400"
+              className="focus:outline-none p-2 text-gray-400 max-sm:rounded-full max-sm:border-2 max-sm:border-gray-300"
               type="email"
               placeholder={t("type your email")}
               value={footerEmail}

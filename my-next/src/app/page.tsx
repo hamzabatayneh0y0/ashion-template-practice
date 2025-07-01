@@ -9,7 +9,48 @@ import blog4 from "../images/blog-4.jpg";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import moment from "moment";
-
+import changeTheme from "@/functoins/changTheme";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import HomeCategory from "@/components/mycomponents/homeCategory/homeCategory";
+import getTheme from "@/functoins/getTheme";
+import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
+type categorydata = {
+  classname: string;
+  title: string;
+  disc: string;
+};
+const data: categorydata[] = [
+  {
+    classname: "1",
+    title: "Women’s fashion",
+    disc: "Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore edolore magna aliquapendisse ultrices gravida.",
+  },
+  {
+    classname: "2",
+    title: "Men’s fashion",
+    disc: "358 items",
+  },
+  {
+    classname: "3",
+    title: "Kid’s fashion",
+    disc: "273 items",
+  },
+  {
+    classname: "4",
+    title: "Cosmetics",
+    disc: "159 items",
+  },
+  {
+    classname: "5",
+    title: "Accessories",
+    disc: "792 items",
+  },
+];
 export default function Home() {
   const year = new Date().getFullYear();
   const [timer, setTimer] = useState<number[]>([]);
@@ -25,6 +66,28 @@ export default function Home() {
         duration.minutes(),
         duration.seconds(),
       ]);
+
+      const theme = async () => {
+        const c: RequestCookie | undefined = await getTheme();
+        if (!c) {
+          const isDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+
+          if (isDark) {
+            changeTheme("dark");
+            localStorage.setItem("theme", "dark");
+          } else {
+            changeTheme("light");
+            localStorage.setItem("theme", "light");
+          }
+        } else {
+          document.documentElement.classList.add(
+            c.value === "dark" ? "dark" : "light"
+          );
+        }
+      };
+      theme();
     }, 1000);
     return () => {
       clearInterval(t);
@@ -32,6 +95,91 @@ export default function Home() {
   }, []);
   return (
     <div className="Home">
+      <div className="homecategory">
+        <div className="slider">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2000,
+              }),
+            ]}
+          >
+            <CarouselContent>
+              {data.map((e, i) => {
+                return (
+                  <HomeCategory
+                    classname={e.classname}
+                    title={e.title}
+                    disc={e.disc}
+                    key={i}
+                  />
+                );
+              })}
+            </CarouselContent>
+          </Carousel>
+        </div>
+      </div>
+
+      <div
+        className={`cllection flex py-12 px-3 justify-center bg-[url(../images/banner-1.jpg)] bg-no-repeat bg-cover bg-center`}
+      >
+        <div className="slider basis-full text-center text-black">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2000,
+              }),
+            ]}
+          >
+            <CarouselContent>
+              <CarouselItem>
+                <p className="text-2xl text-red-500">The Chloe Collection</p>
+                <h1 className="font-[cookie,cursive] text-4xl sm:text-6xl my-3">
+                  The Project Jacket
+                </h1>
+                <Link
+                  className="mt-5 font-bold border-b-3 p-2  border-red-700 block w-fit m-auto"
+                  href={"/shop"}
+                >
+                  Shop Now
+                </Link>
+              </CarouselItem>
+              <CarouselItem>
+                <p className="text-2xl text-red-500">The Chloe Collection</p>
+                <h1 className="font-[cookie,cursive] text-4xl sm:text-6xl  my-3">
+                  The Project Jacket
+                </h1>
+                <Link
+                  className="mt-5 font-bold border-b-3 p-2  border-red-700 block w-fit m-auto"
+                  href={"/shop"}
+                >
+                  Shop Now
+                </Link>
+              </CarouselItem>
+              <CarouselItem>
+                <p className="text-2xl text-red-500">The Chloe Collection</p>
+                <h1 className="font-[cookie,cursive] text-4xl sm:text-6xl  my-3">
+                  The Project Jacket
+                </h1>
+                <Link
+                  className="mt-5 font-bold border-b-3 p-2  border-red-700 block w-fit m-auto"
+                  href={"/shop"}
+                >
+                  Shop Now
+                </Link>
+              </CarouselItem>
+            </CarouselContent>
+          </Carousel>
+        </div>
+      </div>
       <div className="discount container m-auto py-12 flex flex-col lg:flex-row">
         <Image
           src={blog4}
@@ -48,7 +196,7 @@ export default function Home() {
             Sale{" "}
             <span className="text-red-700 mx-3 font-bold text-2xl"> 50%</span>
           </p>
-          <p className="m-8 flex justify-between items-center flex-wrap">
+          <p className="m-8 flex justify-between items-center flex-wrap text-black">
             <span className="text-2xl md:text-4xl font-[500] block">
               {timer[0]}
               <sub className="text-gray-400 text-[15px] md:text-[20px] p-1">

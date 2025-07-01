@@ -1,44 +1,40 @@
 "use client";
-import getTheme from "@/functoins/getTheme";
 import changeTheme from "@/functoins/changTheme";
-import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import getLang from "@/functoins/getlang";
 import changeLang from "@/functoins/changeLang";
 import { useCur } from "@/components/mycomponents/currency/currencyProvider";
-import getCurrency from "@/functoins/getCurrency";
 import changeCur from "@/functoins/changeCur";
 
 export default function MyAccount() {
   const [theme, setTheme] = useState<string>("");
   const [lang, setLang] = useState<string>("");
   const { cur, setCur } = useCur();
-
   const t = useTranslations();
   useEffect(() => {
     const c = async () => {
-      const cookie: RequestCookie | undefined = await getTheme();
+      const cookie: string | null = localStorage.getItem("theme");
+      console.log(cookie);
       if (cookie) {
-        return setTheme(cookie.value);
+        return setTheme(cookie);
       } else {
         return setTheme("system");
       }
     };
     c();
     const c2 = async () => {
-      const cookie: RequestCookie | undefined = await getLang();
+      const cookie: string | null = localStorage.getItem("lang");
       if (cookie) {
-        return setLang(cookie.value);
+        return setLang(cookie);
       } else {
         return setLang("en");
       }
     };
     c2();
     const c3 = async () => {
-      const cookie: RequestCookie | undefined = await getCurrency();
+      const cookie: string | null = localStorage.getItem("currency");
       if (cookie) {
-        return setCur(cookie.value);
+        return setCur(cookie);
       } else {
         return setCur("us");
       }
@@ -65,9 +61,11 @@ export default function MyAccount() {
       if (theme === "dark") {
         // document.documentElement.classList.add("dark");
         changeTheme("dark");
+        localStorage.setItem("theme", "dark");
       } else {
         // document.documentElement.classList.remove("dark");
         changeTheme("light");
+        localStorage.setItem("theme", "light");
       }
     }
   }, [theme]);
@@ -75,11 +73,13 @@ export default function MyAccount() {
   useEffect(() => {
     if (lang == "") return;
     changeLang(lang);
+    localStorage.setItem("lang", lang);
     document.documentElement.dir = lang == "en" ? "ltr" : "rtl";
   }, [lang]);
   useEffect(() => {
     if (cur == "") return;
     changeCur(cur);
+    localStorage.setItem("currency", cur);
   }, [cur]);
   return (
     <div className="">

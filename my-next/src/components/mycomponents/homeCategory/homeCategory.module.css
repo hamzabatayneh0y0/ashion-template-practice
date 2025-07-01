@@ -1,0 +1,38 @@
+.cat1{
+    background-image: url(../../../images/category-1.jpg);
+    background-size: 100% 100%; 
+}
+.cat2{
+    background-image: url(../../../images/category-2.jpg);
+    background-color: #bce3d8;
+       background-size: 75% 75%; 
+        background-position: bottom right;
+
+
+
+}
+.cat3{
+    background-image: url(../../../images/category-3.jpg);
+    background-color: #d3d3ed;
+    background-position: bottom right;
+    background-size: 75% 75%; 
+
+}
+.cat4{
+    background-image: url(../../../images/category-4.jpg);
+    background-color: #fae3d7;
+     background-size: 75% 75%; 
+
+     background-position: bottom right;
+
+
+}
+.cat5{
+    background-image: url(../../../images/category-5.jpg);
+    background-color: #cbe3f5;
+        background-size: 75% 75%; 
+       background-position: bottom right;
+
+
+
+}

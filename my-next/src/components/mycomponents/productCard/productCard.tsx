@@ -100,18 +100,25 @@ export default function ProductCard({
             className={`${style.icons} absolute left-[50%] top-[85%] translate-[-50%] flex justify-center items-end gap-3 w-full`}
           >
             <MdOutlineZoomOutMap
+              title="zoom"
               onClick={handleZoom}
-              className={`${style.icon1} bg-white   rounded-full text-4xl p-1  w-[15%] h-[15%] cursor-pointer `}
+              className={`${style.icon1} bg-white text-black  rounded-full text-4xl p-1  w-[15%] h-[15%] cursor-pointer `}
             />
             <GoHeart
+              title="add to favourite"
               onClick={handleFavorite}
-              className={`${style.icon2} bg-white hover:text-red-500 ${
+              className={`${
+                style.icon2
+              } bg-white text-black  hover:text-red-500 ${
                 fav ? "text-red-500 " : ""
               } rounded-full text-4xl p-1  w-[15%] h-[15%] cursor-pointer `}
             />
             <MdOutlineShoppingBag
+              title="add to cart"
               onClick={handleCart}
-              className={`${style.icon3} bg-white hover:text-red-500${
+              className={`${
+                style.icon3
+              } bg-white text-black  hover:text-red-500${
                 cart ? "text-red-500 " : ""
               } rounded-full  text-4xl p-1  w-[15%] h-[15%] cursor-pointer`}
             />

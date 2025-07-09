@@ -1,13 +1,18 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
 @tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant ar (&:is(.ar *));
 
 @custom-variant dark (&:where(.dark, .dark *));
-.font-arabic{
+@custom-variant ar (&:where(.ar, .ar *));
+
+.font-arabic {
   font-family: var(--font-arabic);
+}
+html {
+  scroll-behavior: smooth;
 }
 @theme inline {
   --color-background: var(--background);
@@ -47,11 +52,10 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-
 }
- 
+
 :root {
-  --my-color:teal;
+  --my-color: teal;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -124,8 +128,4 @@
   * {
     @apply m-0 p-0 box-border;
   }
-  
 }
-
-
-

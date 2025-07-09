@@ -1,38 +1,40 @@
-.cat1{
-    background-image: url(../../../images/category-1.jpg);
-    background-size: 100% 100%; 
+.cat1 {
+  background-image: url(../../../images/category-1.jpg);
+  background-size: cover;
 }
-.cat2{
-    background-image: url(../../../images/category-2.jpg);
-    background-color: #bce3d8;
-       background-size: 75% 75%; 
-        background-position: bottom right;
-
-
-
+.cat2 {
+  background-image: url(../../../images/category-2.jpg);
+  background-color: #bce3d8;
+  background-size: cover;
 }
-.cat3{
-    background-image: url(../../../images/category-3.jpg);
-    background-color: #d3d3ed;
-    background-position: bottom right;
-    background-size: 75% 75%; 
-
+.cat3 {
+  background-image: url(../../../images/category-3.jpg);
+  background-color: #d3d3ed;
+  background-size: cover;
 }
-.cat4{
-    background-image: url(../../../images/category-4.jpg);
-    background-color: #fae3d7;
-     background-size: 75% 75%; 
-
-     background-position: bottom right;
-
-
+.cat4 {
+  background-image: url(../../../images/category-4.jpg);
+  background-color: #fae3d7;
+  background-size: cover;
 }
-.cat5{
-    background-image: url(../../../images/category-5.jpg);
-    background-color: #cbe3f5;
-        background-size: 75% 75%; 
-       background-position: bottom right;
+.cat5 {
+  background-image: url(../../../images/category-5.jpg);
+  background-color: #cbe3f5;
+  background-size: cover;
+}
+[dir="rtl"] .cat1 {
+  background-position: right center;
+}
+[dir="rtl"] .cat2 {
+  background-position: right center;
+}
 
-
-
+[dir="rtl"] .cat3 {
+  background-position: right center;
+}
+[dir="rtl"] .cat4 {
+  background-position: right center;
+}
+[dir="rtl"] .cat5 {
+  background-position: right center;
 }

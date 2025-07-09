@@ -3,7 +3,7 @@ import Samples from "@/components/mycomponents/samples/samples";
 import { usePathname } from "next/navigation";
 
 export default function DisplaySamples() {
-  const hiddenRoutes = ["/login", "/regester"];
+  const hiddenRoutes = ["/login", "/regester", "/not-found"];
   const path = usePathname();
 
   if (hiddenRoutes.includes(path)) return null;

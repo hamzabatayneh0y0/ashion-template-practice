@@ -31,5 +31,185 @@
 
   "dark": "داكن",
   "light": "فاتح",
-  "system": "النظام"
+  "system": "النظام",
+
+  "blog": {
+    "noBadBlood": "لا توجد عداوة! السبب الذي جعل تمار جادج تصالح أخيرًا مع...",
+    "amfCannes": "نجوم مهرجان كان على السجادة الحمراء، كيندال جينر، باميلا...",
+    "loadMore": "تحميل المزيد من المشاركات",
+    "loadLess": "تحميل مشاركات أقل"
+  },
+  "author": "إيما تيمهي",
+  "date": "١٧ سبتمبر ٢٠١٩",
+
+  "cart": {
+    "product": "المنتج",
+    "price": "السعر",
+    "quantity": "الكمية",
+    "total": "الإجمالي",
+    "nothingFound": "لم يتم العثور على شيء..."
+  },
+
+  "checkoutform": {
+    "first_name": "الاسم الأول",
+    "last_name": "اسم العائلة",
+    "country": "البلد",
+    "address": "العنوان",
+    "apartment": "الشقة، الطابق، إلخ (اختياري)",
+    "city": "المدينة",
+    "postcode": "الرمز البريدي",
+    "phone": "رقم الهاتف",
+    "email": "البريد الإلكتروني",
+    "account": "إنشاء حساب؟",
+    "password": "كلمة المرور",
+    "show_password": "إظهار كلمة المرور",
+    "note": "ملاحظة حول طلبك، مثلاً ملاحظة خاصة للتوصيل",
+    "order_notes": "ملاحظات الطلب",
+    "coupon": "هل لديك قسيمة؟ اضغط هنا لإدخال الكود."
+  },
+
+  "order": {
+    "your_order": "طلبك",
+    "product": "المنتج",
+    "total": "الإجمالي",
+    "create_account": "إنشاء حساب؟",
+    "cheque_payment": "الدفع بشيك",
+    "paypal": "بايبال",
+    "place_order": "إتمام الطلب"
+  },
+
+  "contact": {
+    "contact_info": "معلومات الاتصال",
+    "address": "العنوان",
+    "phone": "الهاتف",
+    "support": "الدعم",
+    "send_message": "إرسال رسالة",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "website": "الموقع الإلكتروني",
+    "message": "الرسالة"
+  },
+
+  "favorite": {
+    "nothing_found": "لم يتم العثور على أي شيء..."
+  },
+
+  "login": {
+    "email_placeholder": "اكتب بريدك الإلكتروني",
+    "password_placeholder": "اكتب كلمة المرور",
+    "login_button": "تسجيل الدخول",
+    "no_account": "إذا لم يكن لديك حساب يرجى الذهاب إلى صفحة",
+    "register_page": "التسجيل"
+  },
+
+  "edit_info": "تعديل المعلومات",
+  "save_info": "حفظ المعلومات",
+  "theme": "السمة",
+  "language": "اللغة",
+  "currency": "العملة",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
+  "jd": "دينار أردني",
+  "us": "دولار أمريكي",
+  "info": "المعلومات",
+  "name": "الاسم",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "country": "الدولة",
+  "city": "المدينة",
+  "setting": "الإعدادات",
+  "change_profile_image": "تغيير صورة الحساب",
+
+  "not_found": "الصفحة غير موجودة",
+
+  "auth": {
+    "name": "اكتب اسمك",
+    "email": "اكتب بريدك الإلكتروني",
+    "password": "اكتب كلمة المرور",
+    "repeat_password": "أعد كتابة كلمة المرور",
+    "show_password": "عرض كلمة المرور",
+    "hide_password": "إخفاء كلمة المرور",
+    "password_mismatch": "تحقق من تطابق كلمة المرور",
+    "register": "تسجيل",
+    "have_account": "إذا كان لديك حساب بالفعل، الرجاء الذهاب إلى صفحة",
+    "login": "تسجيل الدخول"
+  },
+
+  "product": {
+    "quantity": "الكمية",
+    "addToCart": "أضف إلى السلة",
+    "sizes": "المقاسات",
+    "colors": "الألوان"
+  },
+
+  "relatedProducts": "منتجات مشابهة",
+
+  "fetchproducts": {
+    "notFound": "عذرًا، لم نعثر على ما تبحث عنه."
+  },
+
+  "shop": {
+    "categories": "الفئات",
+    "shop": "تسوق",
+    "byPrice": "حسب السعر",
+    "all": "الكل",
+    "electronics": "الإلكترونيات",
+    "jewelery": "المجوهرات",
+    "men's clothing": "ملابس رجالية",
+    "women's clothing": "ملابس نسائية"
+  },
+
+  "home": {
+    "womenTitle": "أزياء نسائية",
+    "womenDisc": "نص تجريبي عن الموضة النسائية...",
+    "menTitle": "أزياء رجالية",
+    "menDisc": "358 منتج",
+    "kidTitle": "أزياء الأطفال",
+    "kidDisc": "273 منتج",
+    "cosTitle": "مستحضرات تجميل",
+    "cosDisc": "159 منتج",
+    "accTitle": "إكسسوارات",
+    "accDisc": "792 منتج",
+    "discount": "خصم",
+    "summer": "صيف",
+    "sale": "تخفيض",
+    "shopNow": "تسوق الآن",
+    "feature1": "شحن مجاني",
+    "feature1Desc": "للطلبات فوق 99 دولار",
+    "feature2": "ضمان استرجاع الأموال",
+    "feature2Desc": "في حال وجود مشاكل في المنتج",
+    "feature3": "دعم متواصل 24/7",
+    "feature3Desc": "دعم فني مخصص",
+    "feature4": "دفع آمن",
+    "feature4Desc": "دفع آمن 100%",
+
+    "chloeCollection": "مجموعة كلوي",
+    "projectJacket": "جاكيت المشروع"
+  },
+
+  "newProduct": {
+    "title": "منتجات جديدة",
+    "all": "الكل",
+    "women": "ملابس نسائية",
+    "men": "ملابس رجالية",
+    "kids": "ملابس أطفال",
+    "accessories": "إكسسوارات",
+    "cosmetics": "مستحضرات تجميل",
+    "notFound": "لا توجد نتائج"
+  },
+
+  "searchPlaceholder": "ابحث حسب التصنيف",
+  "all": "الكل",
+  "electronics": "الإلكترونيات",
+  "jewelery": "المجوهرات",
+  "men's clothing": "ملابس رجالية",
+  "women's clothing": "ملابس نسائية",
+
+  "new": "جديد",
+  "sale": "تخفيض",
+  "outOfStock": "غير متوفر",
+
+  "hotTrend": "الأكثر رواجًا",
+  "bestSeller": "الأكثر مبيعًا",
+  "featured": "مُميز"
 }

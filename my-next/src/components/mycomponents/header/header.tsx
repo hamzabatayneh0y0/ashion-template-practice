@@ -8,15 +8,29 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 import { GoHeart } from "react-icons/go";
 import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
+import { useUser } from "../usercontext/contextProvider";
 
 export default function Header() {
+  const cat: string[] = [
+    "all",
+    "electronics",
+    "jewelery",
+    "men's clothing",
+    "women's clothing",
+  ];
+  const { state } = useUser();
   const [appear, setAppear] = useState<boolean>(false);
   const [ul, setUl] = useState<boolean>(false);
   const open = useRef<HTMLDivElement | null>(null);
+  const [search, setSearch] = useState("");
+  const [openSearch, setOpenSerach] = useState(false);
   const t = useTranslations();
-
+  const router = useRouter();
   function handleAppear() {
-    setAppear((prv) => !prv);
+    setAppear((prv) => {
+      return !prv;
+    });
   }
 
   return (
@@ -37,7 +51,13 @@ export default function Header() {
         <div
           className={`flex justify-end gap-8 lg:grow max-lg:order-3 ${style.sidelinks} `}
         >
-          <Link className={style.link} href={"/"}>
+          <Link
+            onClick={() => {
+              setAppear(false);
+            }}
+            className={style.link}
+            href={"/"}
+          >
             {t("Home")}
           </Link>
           <Link className={style.link} href={"/shop"}>
@@ -50,13 +70,14 @@ export default function Header() {
             }
           >
             <Link
-              className={`${style.link}`}
-              href={"/#"}
+              className={`${style.link} ${style.pages} flex justify-between items-center`}
+              href={""}
               onClick={() => {
                 setUl((prv) => !prv);
               }}
             >
-              {t("Pages")}
+              <span> {t("Pages")}</span>
+              <span className={`${style.plus} plus`}>+</span>
             </Link>
             <div
               className={`${style.tr} ${
@@ -64,43 +85,117 @@ export default function Header() {
               }  transition-all  lg:absolute lg:left-0   lg:bg-gray-950 lg:text-white text-2xl font-normal z-[222] `}
             >
               <ul className={`p-5 flex flex-col gap-4`}>
-                <Link className={style.link} href={"/ProductDetails"}>
-                  {t("Product Details")}
-                </Link>
-                <Link className={style.link} href={"/CheckOut"}>
+                <Link
+                  onClick={() => {
+                    setAppear(false);
+                  }}
+                  className={style.link}
+                  href={"/CheckOut"}
+                >
                   {t("Check Out")}
                 </Link>
-                <Link className={style.link} href={"/Blog"}>
+                <Link
+                  onClick={() => {
+                    setAppear(false);
+                  }}
+                  className={style.link}
+                  href={"/Blog"}
+                >
                   {t("Blog")}
-                </Link>
-                <Link className={style.link} href={"/BlogDetails"}>
-                  {t("Blog Details")}
                 </Link>
               </ul>
             </div>
           </div>
-          <Link className={style.link} href={"/contact"}>
+          <Link
+            className={style.link}
+            href={"/contact"}
+            onClick={() => {
+              setAppear(false);
+            }}
+          >
             {t("Contact")}
           </Link>
 
           <p className="text-2xl text-gray-500">
-            <Link href={"/login"}>{t("Login")}</Link>/
-            <Link href={"/register"}>{t("Register")}</Link>
+            {state.logedin ? (
+              <>
+                <Link
+                  onClick={() => {
+                    setAppear(false);
+                  }}
+                  href={"/login"}
+                >
+                  {t("Login")}
+                </Link>
+                {" / "}
+                <Link
+                  onClick={() => {
+                    setAppear(false);
+                  }}
+                  href={"/register"}
+                >
+                  {t("Register")}
+                </Link>
+              </>
+            ) : (
+              <Link
+                onClick={() => {
+                  setAppear(false);
+                }}
+                href={""}
+              >
+                LogOut
+              </Link>
+            )}
           </p>
         </div>
-        <div className="header-icons flex gap-5 me-5 text-3xl font-bold max-lg:mt-20 max-lg:justify-end max-lg:w-full">
-          <CiSearch className="cursor-pointer" />
-          <Link href={"/favorite"}>
+        <div className="header-icons flex gap-5 me-5 items-center text-3xl font-bold max-lg:mt-20 max-lg:justify-end max-lg:w-full">
+          <CiSearch
+            className="cursor-pointer"
+            onClick={() => {
+              setAppear(false);
+              setOpenSerach(true);
+              setSearch("");
+            }}
+          />
+          <Link
+            onClick={() => {
+              setAppear(false);
+            }}
+            href={"/favorite"}
+          >
             <GoHeart className="hover:text-red-500" />
           </Link>
-          <Link href={"/cart"}>
+          <Link
+            onClick={() => {
+              setAppear(false);
+            }}
+            href={"/cart"}
+          >
             <MdOutlineShoppingBag />
+          </Link>
+          <Link
+            onClick={() => {
+              setAppear(false);
+            }}
+            href={"/my-account"}
+          >
+            {" "}
+            <Image
+              src={state.img.toString() || "/icon-7797704_640.png"}
+              alt="user image"
+              width={50}
+              height={50}
+              className="rounded-full shadow-sm"
+            />
           </Link>
         </div>
       </div>
       <CiMenuBurger
         className="blok lg:hidden text-4xl cursor-pointer"
-        onClick={handleAppear}
+        onClick={() => {
+          handleAppear();
+        }}
       />
       <div
         className={`shadow lg:invisible fixed w-full h-full bg-black top-0 left-0 opacity-15 z-[889] ${
@@ -111,6 +206,58 @@ export default function Header() {
           setUl(false);
         }}
       ></div>
+
+      <div
+        className={`search fixed left-0 top-0 w-full h-full bg-white/50 z-[999] ${
+          openSearch ? "scale-100" : "scale-0"
+        } transition-all duration-300 flex justify-center items-center`}
+        onClick={(e) => {
+          if (e.target instanceof HTMLDivElement) setOpenSerach(false);
+        }}
+      >
+        <div className="content basis-[50%]">
+          <input
+            placeholder={t("searchPlaceholder")}
+            className="border-b-2 border-gray-200 p-2 shadow-sm rounded-sm outline-0 w-full"
+            type="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                const r = cat.filter((e) => search === t(e));
+
+                router.push(`/shop/?cat=${r}`);
+                setOpenSerach(false);
+                setAppear(false);
+              }
+            }}
+            onClick={() => setOpenSerach(true)}
+          />
+          <ul className="menu">
+            {cat.map((e, i) => {
+              return (
+                <li
+                  onClick={() => {
+                    router.push(`/shop/?cat=${e}`);
+
+                    setSearch(e);
+                    setOpenSerach(false);
+                    setAppear(false);
+                  }}
+                  key={i}
+                  className={`font-[500] p-3 border-b-2 border-gray-200 cursor-pointer hover:p-4 transition-all ${
+                    t(e).toLowerCase().includes(search.toLowerCase())
+                      ? "block"
+                      : "hidden"
+                  }`}
+                >
+                  {t(e)}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

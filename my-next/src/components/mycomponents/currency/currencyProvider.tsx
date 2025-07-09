@@ -19,11 +19,13 @@ export const CurrencyContext = createContext<CurrencyContextType>({
 });
 
 export default function CurrencyProvider({
+  c,
   children,
 }: {
+  c: string;
   children: ReactNode;
 }) {
-  const [cur, setCur] = useState("");
+  const [cur, setCur] = useState(c);
 
   return (
     <CurrencyContext.Provider value={{ cur, setCur }}>

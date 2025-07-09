@@ -31,5 +31,183 @@
 
   "dark": "dark",
   "light": "light",
-  "system": "system"
+  "system": "system",
+
+  "blog": {
+    "noBadBlood": "No Bad Blood! The Reason Why Tamr Judge Finally Made Up With...",
+    "amfCannes": "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
+    "loadMore": "Load more posts",
+    "loadLess": "Load less posts"
+  },
+  "author": "Ema Timahe",
+  "date": "Sep 17, 2019",
+
+  "cart": {
+    "product": "Product",
+    "price": "Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "nothingFound": "Nothing Found..."
+  },
+
+  "checkoutform": {
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "country": "Country",
+    "address": "Address",
+    "apartment": "Apartment, suite, etc. (optional)",
+    "city": "City",
+    "postcode": "Postcode / ZIP",
+    "phone": "Phone",
+    "email": "Email",
+    "account": "Create an account?",
+    "password": "Password",
+    "show_password": "Show password",
+    "note": "Note about your order, e.g., special note for delivery",
+    "order_notes": "Order Notes",
+    "coupon": "Have a coupon? Click here to enter your code."
+  },
+
+  "order": {
+    "your_order": "Your order",
+    "product": "Product",
+    "total": "Total",
+    "create_account": "Create an account?",
+    "cheque_payment": "Cheque payment",
+    "paypal": "PayPal",
+    "place_order": "Place Order"
+  },
+
+  "contact": {
+    "contact_info": "Contact info",
+    "address": "Address",
+    "phone": "Phone",
+    "support": "Support",
+    "send_message": "SEND MESSAGE",
+    "name": "Name",
+    "email": "Email",
+    "website": "Website",
+    "message": "Message"
+  },
+
+  "favorite": {
+    "nothing_found": "Nothing Found..."
+  },
+
+  "login": {
+    "email_placeholder": "type your email",
+    "password_placeholder": "type your password",
+    "login_button": "login",
+    "no_account": "if you do not have account please go to page",
+    "register_page": "register"
+  },
+
+  "edit_info": "Edit Info",
+  "save_info": "Save Info",
+  "theme": "Theme",
+  "language": "Language",
+  "currency": "Currency",
+  "arabic": "Arabic",
+  "english": "English",
+  "jd": "JD",
+  "us": "USD",
+  "info": "Info",
+  "name": "Name",
+  "email": "Email",
+  "password": "Password",
+  "country": "Country",
+  "city": "City",
+  "setting": "Settings",
+  "change_profile_image": "Change profile image",
+
+  "not_found": "Page Not Found",
+
+  "auth": {
+    "name": "Type your name",
+    "email": "Type your email",
+    "password": "Type your password",
+    "repeat_password": "Repeat your password",
+    "show_password": "Show password",
+    "hide_password": "Hide password",
+    "password_mismatch": "Check your password",
+    "register": "Register",
+    "have_account": "If you already have an account, please go to",
+    "login": "Login"
+  },
+
+  "product": {
+    "quantity": "Quantity",
+    "addToCart": "Add To Cart",
+    "sizes": "Sizes",
+    "colors": "Colors"
+  },
+
+  "relatedProducts": "Related Products",
+  "fetchproducts": {
+    "notFound": "Sorry, we didn't find what you're looking for."
+  },
+
+  "shop": {
+    "categories": "Categories",
+    "shop": "Shop",
+    "byPrice": "By Price",
+    "all": "All",
+    "electronics": "Electronics",
+    "jewelery": "Jewelery",
+    "men's clothing": "Men's Clothing",
+    "women's clothing": "Women's Clothing"
+  },
+
+  "home": {
+    "womenTitle": "Women’s fashion",
+    "womenDisc": "Sitamet, consectetur adipiscing elit...",
+    "menTitle": "Men’s fashion",
+    "menDisc": "358 items",
+    "kidTitle": "Kid’s fashion",
+    "kidDisc": "273 items",
+    "cosTitle": "Cosmetics",
+    "cosDisc": "159 items",
+    "accTitle": "Accessories",
+    "accDisc": "792 items",
+    "discount": "Discount",
+    "summer": "Summer",
+    "sale": "Sale",
+    "shopNow": "Shop Now",
+    "feature1": "Free Shipping",
+    "feature1Desc": "For all oder over $99",
+    "feature2": "Free Money Back Guarantee",
+    "feature2Desc": "If good have Problems",
+    "feature3": "Online Support 24/7",
+    "feature3Desc": "Dedicated support",
+    "feature4": "Payment Secure",
+    "feature4Desc": "100% secure payment",
+    "chloeCollection": "The Chloe Collection",
+    "projectJacket": "The Project Jacket"
+  },
+
+  "newProduct": {
+    "title": "New Product",
+    "all": "All",
+    "women": "Women’s",
+    "men": "Men’s",
+    "kids": "Kid’s",
+    "accessories": "Accessories",
+    "cosmetics": "Cosmetics",
+    "notFound": "Not Found"
+  },
+
+  "searchPlaceholder": "Search by category",
+  "all": "All",
+  "electronics": "Electronics",
+  "jewelery": "Jewelery",
+  "men's clothing": "Men's Clothing",
+  "women's clothing": "Women's Clothing",
+
+  "new": "New",
+  "sale": "Sale",
+  "outOfStock": "Out of stock",
+
+  "hotTrend": "Hot Trend",
+  "bestSeller": "Best Seller",
+  "featured": "Featured"
 }

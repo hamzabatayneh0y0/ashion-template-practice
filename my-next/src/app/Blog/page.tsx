@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from "next-intl";
 import BlogItem from "@/components/mycomponents/blogItem/blogItem";
 import blog1 from "../../images/blog-1.jpg";
 import blog2 from "../../images/blog-2.jpg";
@@ -12,6 +13,7 @@ import blog9 from "../../images/blog-9.jpg";
 
 import { StaticImageData } from "next/image";
 import { useState } from "react";
+
 interface bloginfo {
   src: StaticImageData;
   text: string;
@@ -19,95 +21,95 @@ interface bloginfo {
   date: string;
   id: number;
 }
-const data: bloginfo[] = [
-  {
-    src: blog1,
-    text: "No Bad Blood! The Reason Why Tamr Judge Finally Made Up With...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 1,
-  },
 
-  {
-    src: blog2,
-    text: "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 2,
-  },
-  {
-    src: blog3,
-    text: "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 3,
-  },
-  {
-    src: blog4,
-    text: "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 4,
-  },
-  {
-    src: blog5,
-    text: "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 5,
-  },
-  {
-    src: blog6,
-    text: "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 6,
-  },
-
-  {
-    src: blog7,
-    text: "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 7,
-  },
-  {
-    src: blog8,
-    text: "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 8,
-  },
-  {
-    src: blog9,
-    text: "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 9,
-  },
-
-  {
-    src: blog7,
-    text: "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 10,
-  },
-  {
-    src: blog8,
-    text: "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
-    auth: "Ema Timahe",
-    date: "Seb 17, 2019",
-    id: 11,
-  },
-];
 export default function Blog() {
+  const t = useTranslations();
+  const data: bloginfo[] = [
+    {
+      src: blog1,
+      text: t("blog.noBadBlood"),
+      auth: t("author"),
+      date: t("date"),
+      id: 1,
+    },
+    {
+      src: blog2,
+      text: t("blog.amfCannes"),
+      auth: t("author"),
+      date: t("date"),
+      id: 2,
+    },
+    {
+      src: blog3,
+      text: t("blog.amfCannes"),
+      auth: t("author"),
+      date: t("date"),
+      id: 3,
+    },
+    {
+      src: blog4,
+      text: t("blog.amfCannes"),
+      auth: t("author"),
+      date: t("date"),
+      id: 4,
+    },
+    {
+      src: blog5,
+      text: t("blog.amfCannes"),
+      auth: t("author"),
+      date: t("date"),
+      id: 5,
+    },
+    {
+      src: blog6,
+      text: t("blog.amfCannes"),
+      auth: t("author"),
+      date: t("date"),
+      id: 6,
+    },
+    {
+      src: blog7,
+      text: t("blog.amfCannes"),
+      auth: t("author"),
+      date: t("date"),
+      id: 7,
+    },
+    {
+      src: blog8,
+      text: t("blog.amfCannes"),
+      auth: t("author"),
+      date: t("date"),
+      id: 8,
+    },
+    {
+      src: blog9,
+      text: t("blog.amfCannes"),
+      auth: t("author"),
+      date: t("date"),
+      id: 9,
+    },
+    {
+      src: blog7,
+      text: t("blog.amfCannes"),
+      auth: t("author"),
+      date: t("date"),
+      id: 10,
+    },
+    {
+      src: blog8,
+      text: t("blog.amfCannes"),
+      auth: t("author"),
+      date: t("date"),
+      id: 11,
+    },
+  ];
+
   const [load, setLoad] = useState<boolean>(false);
+
   function handleClick() {
-    setLoad((prv) => {
-      return !prv;
-    });
+    setLoad((prv) => !prv);
   }
+
   return (
     <div className="blog py-12 container m-auto max-sm:my-4 flex flex-col">
       <div
@@ -124,10 +126,10 @@ export default function Blog() {
         })}
       </div>
       <button
-        className="cursor-pointer bg-gray-400 rounded-md capitalize font-bold py-3 px-5 m-auto mt-8 transition-all"
+        className="cursor-pointer bg-red-500 text-white rounded-md capitalize font-bold py-3 px-5 m-auto mt-8 transition-all"
         onClick={handleClick}
       >
-        {load ? "Load less posts" : "Load more posts"}
+        {load ? t("blog.loadLess") : t("blog.loadMore")}
       </button>
     </div>
   );

@@ -1,0 +1,12 @@
+
+body:has(.notFound) .header{
+    display: none;
+}
+
+
+body:has(.notFound) .samples{
+    display: none;
+}
+body:has(.notFound) .footer{
+    display: none;
+}

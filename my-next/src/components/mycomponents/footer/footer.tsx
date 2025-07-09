@@ -50,24 +50,29 @@ export default function Footer() {
 
         <ul className="quicklinks basis-full md:basis-[40%] lg:basis-[20%] p-5">
           <p className="title text-3xl font-bold mb-4">{t("Quick links")}</p>
+          <li className="my-2"></li>
           <li className="my-2">
-            <Link href={"/#"} className="text-gray-400 text-2xl font-light">
-              {t("About")}
-            </Link>
-          </li>
-          <li className="my-2">
-            <Link href={"/#"} className="text-gray-400 text-2xl font-light">
+            <Link
+              href={"/Blog"}
+              className="text-gray-400 text-2xl font-light w-full"
+            >
               {t("Blogs")}
             </Link>
           </li>
           <li className="my-2">
-            <Link href={"/#"} className="text-gray-400 text-2xl font-light">
+            <Link
+              href={"/contact"}
+              className="text-gray-400 text-2xl font-light w-full"
+            >
               {t("Contact")}
             </Link>
           </li>
           <li className="my-2">
-            <Link href={"/#"} className="text-gray-400 text-2xl font-light">
-              {t("FAQ")}
+            <Link
+              href={"/shop"}
+              className="text-gray-400 text-2xl font-light w-full"
+            >
+              Shop
             </Link>
           </li>
         </ul>
@@ -77,24 +82,33 @@ export default function Footer() {
           <li className="my-2">
             <Link
               href={"/my-account"}
-              className="text-gray-400 text-2xl font-light"
+              className="text-gray-400 text-2xl font-light w-full"
             >
               {t("My Acccount")}
             </Link>
           </li>
           <li className="my-2">
-            <Link href={"/#"} className="text-gray-400 text-2xl font-light">
-              {t("Orders Tracking")}
+            <Link
+              href={"/cart"}
+              className="w-full text-gray-400 text-2xl font-light"
+            >
+              Cart
             </Link>
           </li>
           <li className="my-2">
-            <Link href={"/#"} className="text-gray-400 text-2xl font-light">
+            <Link
+              href={"/CheckOut"}
+              className="text-gray-400 text-2xl font-light w-full"
+            >
               {t("Checkout")}
             </Link>
           </li>
           <li className="my-2">
-            <Link href={"/#"} className="text-gray-400 text-2xl font-light">
-              {t("Wishlist")}
+            <Link
+              href={"/favorite"}
+              className="text-gray-400 text-2xl font-light w-full"
+            >
+              Favourite
             </Link>
           </li>
         </ul>
@@ -106,7 +120,7 @@ export default function Footer() {
               e.preventDefault();
             }}
             action=""
-            className="sm:rounded-full sm:border-2 sm:border-gray-300 flex justify-between p-2 max-sm:flex-col"
+            className="sm:rounded-full sm:border-2 sm:border-gray-300 flex justify-between p-2 max-sm:flex-col max-sm:gap-2"
           >
             <input
               className="focus:outline-none p-2 text-gray-400 max-sm:rounded-full max-sm:border-2 max-sm:border-gray-300"

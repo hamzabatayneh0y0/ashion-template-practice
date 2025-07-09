@@ -35,17 +35,18 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 export const metadata: Metadata = {
   title: "Ashion",
   description: "استعرض أفضل المنتجات بأسعار منافسة وجودة عالية.",
   openGraph: {
     title: "المتجر - تصفح منتجاتنا",
     description: "استعرض أفضل المنتجات بأسعار منافسة وجودة عالية.",
-    url: "https://ashion-practice-template-nj3axgw96-hamzas-projects-e9b9b93d.vercel.app",
+    url: "https://ashion-template-practice.vercel.app",
     siteName: "متجري الإلكتروني",
     images: [
       {
-        url: "https://ashion-practice-template-nj3axgw96-hamzas-projects-e9b9b93d.vercel.app/logo.png",
+        url: "https://ashion-template-practice.vercel.app/logo.png",
         width: 1200,
         height: 630,
         alt: "صورة صفحة المتجر",
@@ -58,9 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "المتجر - تصفح منتجاتنا",
     description: "استعرض أفضل المنتجات بأسعار منافسة وجودة عالية.",
-    images: [
-      "https://ashion-practice-template-nj3axgw96-hamzas-projects-e9b9b93d.vercel.app/logo.png",
-    ],
+    images: ["https://ashion-template-practice.vercel.app/logo.png"],
   },
 };
 

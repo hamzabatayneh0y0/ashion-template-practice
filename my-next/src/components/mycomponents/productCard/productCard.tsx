@@ -44,7 +44,7 @@ export default function ProductCard({
     );
 
     setcart(state.products.some((e) => e.productId === product?.id && e.cart));
-  }, []);
+  }, [state.products, product?.id]);
 
   function handleZoom() {
     setOpen({
@@ -119,7 +119,7 @@ export default function ProductCard({
         </div>
 
         <Link
-          href={`/shop/ProductDetails/?id=${product.id}&label=${label}&beforesale=${beforesale}`}
+          href={`/shop/ProductDetails/?id=${product.id.toString()}&label=${label}&beforesale=${beforesale.toString()}`}
           className={`${row ? "basis-[50%]" : ""} block p-2`}
         >
           <div

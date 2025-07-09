@@ -5,7 +5,13 @@ import Rate from "@/components/mycomponents/rate/rate";
 import Money from "@/components/mycomponents/currency/money";
 import Actions from "./actions";
 import { getTranslations } from "next-intl/server";
-
+interface PageProps {
+  searchParams?: {
+    id?: string;
+    label?: string;
+    beforesale?: string;
+  };
+}
 interface productType {
   category: string;
   description: string;
@@ -19,21 +25,17 @@ interface productType {
   title: string;
 }
 
-export default async function ProductDetails({
-  searchParams,
-}: {
-  searchParams: { id: number; label: string; beforesale: string };
-}) {
+export default async function ProductDetails({ searchParams }: PageProps) {
   const t = await getTranslations();
-
+  const params = searchParams;
   let product: productType | null = null;
   let sugestions: productType[] | null = null;
-  const beforesale = searchParams.beforesale;
-  const label = searchParams.label;
+  const beforesale = params?.beforesale || 0;
+  const label = params?.label || "none";
 
   try {
     const F = await fetch(
-      `https://fakestoreapi.com/products/${searchParams.id}`
+      `https://fakestoreapi.com/products/${params?.id || 1}`
     );
     if (!F.ok) throw "fetch error";
     const data = await F.json();
@@ -65,7 +67,7 @@ export default async function ProductDetails({
           <p>
             {label == "sale" && (
               <span className="line-through text-gray-300 text-2xl">
-                <Money m={parseFloat(beforesale)} />
+                <Money m={parseFloat(beforesale || "0")} />
               </span>
             )}{" "}
             <span

@@ -11,9 +11,7 @@ import { MdEdit, MdSave, MdVisibility, MdVisibilityOff } from "react-icons/md";
 
 export default function MyAccount() {
   const { state, dispatch } = useUser();
-  const [img, setImg] = useState<string | null | ArrayBuffer>(
-    "/icon-7797704_640.png"
-  );
+
   const [theme, setTheme] = useState<string>("");
   const [lang, setLang] = useState<string>("");
   const { cur, setCur } = useCur();
@@ -37,7 +35,6 @@ export default function MyAccount() {
       country: state.location.country,
       city: state.location.city,
     });
-    setImg(state.img);
   }, [state]);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -100,6 +97,7 @@ export default function MyAccount() {
       }
     };
     c3();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

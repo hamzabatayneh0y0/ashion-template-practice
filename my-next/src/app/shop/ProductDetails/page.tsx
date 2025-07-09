@@ -5,13 +5,7 @@ import Rate from "@/components/mycomponents/rate/rate";
 import Money from "@/components/mycomponents/currency/money";
 import Actions from "./actions";
 import { getTranslations } from "next-intl/server";
-interface PageProps {
-  searchParams?: {
-    id?: string;
-    label?: string;
-    beforesale?: string;
-  };
-}
+
 interface productType {
   category: string;
   description: string;
@@ -25,17 +19,27 @@ interface productType {
   title: string;
 }
 
-export default async function ProductDetails({ searchParams }: PageProps) {
+export default async function ProductDetails({
+  searchParams,
+}: {
+  searchParams: Promise<{
+    id?: string;
+    label?: string;
+    beforesale?: string;
+  }>;
+}) {
+  console.log(searchParams);
+
   const t = await getTranslations();
-  const params = searchParams;
+  const searrchparams = await searchParams;
   let product: productType | null = null;
   let sugestions: productType[] | null = null;
-  const beforesale = params?.beforesale || 0;
-  const label = params?.label || "none";
+  const beforesale = searrchparams?.beforesale || "0";
+  const label = searrchparams?.label || "none";
 
   try {
     const F = await fetch(
-      `https://fakestoreapi.com/products/${params?.id || 1}`
+      `https://fakestoreapi.com/products/${searrchparams?.id || 1}`
     );
     if (!F.ok) throw "fetch error";
     const data = await F.json();

@@ -20,7 +20,7 @@ export default function HomeTimmer() {
     return () => {
       clearInterval(t);
     };
-  }, []);
+  }, [l]);
 
   return (
     <>

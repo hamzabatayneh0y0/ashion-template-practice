@@ -27,7 +27,7 @@ export default function Quantity({
   }
   useEffect(() => {
     setQ(quantity);
-  }, []);
+  }, [quantity]);
 
   useEffect(() => {
     dispatch({
@@ -37,7 +37,7 @@ export default function Quantity({
         quantity: q,
       },
     });
-  }, [q]);
+  }, [q, dispatch, id]);
 
   return (
     <>

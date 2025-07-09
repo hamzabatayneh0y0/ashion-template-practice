@@ -24,7 +24,7 @@ export default function Shop() {
   useEffect(() => {
     setChoosedCat(fromSearch.get("cat") || "all");
     setPrice(parseInt(fromSearch.get("price") || "100"));
-  }, []);
+  }, [fromSearch]);
 
   useEffect(() => {
     setChoosedCat(fromSearch.get("cat") || "all");
@@ -34,7 +34,7 @@ export default function Shop() {
   useEffect(() => {
     if (choosedCat && price)
       router.push(`/shop/?cat=${choosedCat}&price=${price?.toString()}`);
-  }, [choosedCat, price]);
+  }, [choosedCat, price, router]);
 
   if (!price && !choosedCat) return <Loading />;
 

@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://ashion-template-practice.vercel.app/logo.png",
-        width: 1200,
+        width: 1000,
         height: 630,
         alt: "صورة صفحة المتجر",
       },

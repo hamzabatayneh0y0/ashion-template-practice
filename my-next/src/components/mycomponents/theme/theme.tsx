@@ -36,6 +36,17 @@ export default function Theme({ children }: { children: ReactNode }) {
       }
     } else {
       setTheme(c);
+      if (c === "dark") {
+        changeTheme("dark");
+        localStorage.setItem("theme", "dark");
+        document.documentElement.classList.remove("light");
+        document.documentElement.classList.add("dark");
+      } else {
+        changeTheme("light");
+        localStorage.setItem("theme", "light");
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.add("light");
+      }
     }
   }, []);
   if (theme === "") return <Loading />;

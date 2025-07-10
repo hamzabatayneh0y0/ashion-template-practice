@@ -8,11 +8,12 @@ import changeCur from "@/functoins/changeCur";
 import Image from "next/image";
 import { useUser } from "@/components/mycomponents/usercontext/contextProvider";
 import { MdEdit, MdSave, MdVisibility, MdVisibilityOff } from "react-icons/md";
+import { useTheme } from "@/components/mycomponents/theme/theme";
 
 export default function MyAccount() {
   const { state, dispatch } = useUser();
 
-  const [theme, setTheme] = useState<string>("");
+  const { theme, setTheme } = useTheme();
   const [lang, setLang] = useState<string>("");
   const { cur, setCur } = useCur();
   const t = useTranslations();
@@ -106,19 +107,29 @@ export default function MyAccount() {
     if (theme === "system") {
       const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       localStorage.setItem("theme", "system");
-
       if (isDark) {
         changeTheme("dark");
+
+        document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
       } else {
         changeTheme("light");
+
+        document.documentElement.classList.remove("dark");
+
+        document.documentElement.classList.add("light");
       }
     } else {
       if (theme === "dark") {
         changeTheme("dark");
         localStorage.setItem("theme", "dark");
+        document.documentElement.classList.remove("light");
+        document.documentElement.classList.add("dark");
       } else {
         changeTheme("light");
         localStorage.setItem("theme", "light");
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.add("light");
       }
     }
   }, [theme]);
@@ -128,6 +139,9 @@ export default function MyAccount() {
     changeLang(lang);
     localStorage.setItem("lang", lang);
     document.documentElement.dir = lang == "en" ? "ltr" : "rtl";
+    document.documentElement.classList.remove("ar", "en");
+
+    document.documentElement.classList.add(lang);
   }, [lang]);
 
   useEffect(() => {
@@ -145,6 +159,7 @@ export default function MyAccount() {
           width={100}
           height={100}
           className="rounded-full shadow-sm"
+          style={{ width: "100px", height: "100px" }}
         />
         <label className="m-2 cursor-pointer hover:text-red-500 transition-all">
           <span className="m-2 cursor-pointer hover:text-red-500 transition-all">

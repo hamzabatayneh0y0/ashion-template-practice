@@ -77,8 +77,8 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={theme + " " + locale}
-      data-theme={theme}
+      className={theme}
+      // data-theme={theme}
       dir={locale == "en" ? "ltr" : "rtl"}
     >
       <head>
@@ -89,20 +89,21 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased dark:bg-gray-900 dark:text-white`}
       >
-        <Theme />
-        <UserProvider>
-          <CurrencyProvider c={c}>
-            <NextIntlClientProvider>
-              <DisplayHeader />
-              <ZoomProvider>
-                {children}
-                <Zoom />
-              </ZoomProvider>
-              <DisplaySamples />
-              <DisplayFooter />
-            </NextIntlClientProvider>
-          </CurrencyProvider>
-        </UserProvider>
+        <Theme>
+          <UserProvider>
+            <CurrencyProvider c={c}>
+              <NextIntlClientProvider>
+                <DisplayHeader />
+                <ZoomProvider>
+                  {children}
+                  <Zoom />
+                </ZoomProvider>
+                <DisplaySamples />
+                <DisplayFooter />
+              </NextIntlClientProvider>
+            </CurrencyProvider>
+          </UserProvider>
+        </Theme>
       </body>
     </html>
   );

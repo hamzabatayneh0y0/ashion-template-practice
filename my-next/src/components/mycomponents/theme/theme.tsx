@@ -1,32 +1,51 @@
 "use client";
+import Loading from "@/app/loading";
 import changeTheme from "@/functoins/changTheme";
-import getTheme from "@/functoins/getTheme";
-import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
-import { useEffect } from "react";
 
-export default function Theme() {
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+export const ThemeContext = createContext<{
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
+}>({
+  theme: "",
+  setTheme: () => {},
+});
+
+export default function Theme({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useState("");
   useEffect(() => {
-    const theme = async () => {
-      const c: RequestCookie | undefined = await getTheme();
-      if (!c) {
-        const isDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
+    const c: string | null = localStorage.getItem("theme");
+    if (!c) {
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        if (isDark) {
-          changeTheme("dark");
-          localStorage.setItem("theme", "dark");
-        } else {
-          changeTheme("light");
-          localStorage.setItem("theme", "light");
-        }
+      localStorage.setItem("theme", "system");
+      setTheme("system");
+      if (isDark) {
+        changeTheme("dark");
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.add(
-          c.value === "dark" ? "dark" : "light"
-        );
+        changeTheme("light");
+
+        document.documentElement.classList.add("light");
       }
-    };
-    theme();
+    } else {
+      setTheme(c);
+    }
   }, []);
-  return null;
+  if (theme === "") return <Loading />;
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+export function useTheme() {
+  const { theme, setTheme } = useContext(ThemeContext);
+  return { theme, setTheme };
 }

@@ -10,6 +10,7 @@ import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useUser } from "../usercontext/contextProvider";
+import { FaPlus } from "react-icons/fa";
 
 export default function Header() {
   const cat: string[] = [
@@ -38,7 +39,7 @@ export default function Header() {
       <Image src={logo} alt={"logo"} width={150} className="" />
       <div
         ref={open}
-        className={`max-lg:shadow-lgx p-5 flex grow lg:justify-between lg:items-center gap-8 text-2xl xl:text-3xl transition-all navlinks ${
+        className={` dark:bg-gray-900 bg-white max-lg:shadow-lgx p-5 flex grow lg:justify-between lg:items-center gap-8 text-2xl xl:text-3xl transition-all navlinks ${
           style.navlinks
         } max-lg:w-[300px] ${appear ? style.show : " "} `}
       >
@@ -77,7 +78,7 @@ export default function Header() {
               }}
             >
               <span> {t("Pages")}</span>
-              <span className={`${style.plus} plus`}>+</span>
+              <FaPlus className={`${style.plus} plus`} />
             </Link>
             <div
               className={`${style.tr} ${
@@ -144,12 +145,12 @@ export default function Header() {
                 }}
                 href={""}
               >
-                LogOut
+                {t("LogOut")}
               </Link>
             )}
           </p>
         </div>
-        <div className="header-icons flex gap-5 me-5 items-center text-3xl font-bold max-lg:mt-20 max-lg:justify-end max-lg:w-full">
+        <div className="header-icons lg:m-0 flex gap-5 me-5 items-center text-3xl font-bold max-lg:mt-20 max-lg:justify-end max-lg:w-full">
           <CiSearch
             className="cursor-pointer"
             onClick={() => {
@@ -187,6 +188,7 @@ export default function Header() {
               width={50}
               height={50}
               className="rounded-full shadow-sm"
+              style={{ width: "50px", height: "50px" }}
             />
           </Link>
         </div>
@@ -208,7 +210,7 @@ export default function Header() {
       ></div>
 
       <div
-        className={`search fixed left-0 top-0 w-full h-full bg-white/50 z-[999] ${
+        className={`search fixed left-0 top-0 w-full h-full text-black dark:bg-black/50 dark:text-white  bg-white/50 z-[999] ${
           openSearch ? "scale-100" : "scale-0"
         } transition-all duration-300 flex justify-center items-center`}
         onClick={(e) => {
@@ -233,7 +235,7 @@ export default function Header() {
             }}
             onClick={() => setOpenSerach(true)}
           />
-          <ul className="menu">
+          <ul className="menu dark:bg-black bg-white">
             {cat.map((e, i) => {
               return (
                 <li

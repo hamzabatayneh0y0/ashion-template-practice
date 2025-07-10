@@ -14,7 +14,7 @@ export default function NewCard({
   useEffect(() => {
     if (show) {
       setRender(true);
-      const timeout = setTimeout(() => setshow1(true));
+      const timeout = setTimeout(() => setshow1(true), 10);
 
       return () => clearTimeout(timeout);
     } else {

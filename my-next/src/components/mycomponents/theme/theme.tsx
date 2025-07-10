@@ -36,16 +36,36 @@ export default function Theme({ children }: { children: ReactNode }) {
       }
     } else {
       setTheme(c);
-      if (c === "dark") {
-        changeTheme("dark");
-        localStorage.setItem("theme", "dark");
-        document.documentElement.classList.remove("light");
-        document.documentElement.classList.add("dark");
+
+      if (c === "system") {
+        const isDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        localStorage.setItem("theme", "system");
+        if (isDark) {
+          changeTheme("dark");
+
+          document.documentElement.classList.add("dark");
+          document.documentElement.classList.remove("light");
+        } else {
+          changeTheme("light");
+
+          document.documentElement.classList.remove("dark");
+
+          document.documentElement.classList.add("light");
+        }
       } else {
-        changeTheme("light");
-        localStorage.setItem("theme", "light");
-        document.documentElement.classList.remove("dark");
-        document.documentElement.classList.add("light");
+        if (c === "dark") {
+          changeTheme("dark");
+          localStorage.setItem("theme", "dark");
+          document.documentElement.classList.remove("light");
+          document.documentElement.classList.add("dark");
+        } else {
+          changeTheme("light");
+          localStorage.setItem("theme", "light");
+          document.documentElement.classList.remove("dark");
+          document.documentElement.classList.add("light");
+        }
       }
     }
   }, []);

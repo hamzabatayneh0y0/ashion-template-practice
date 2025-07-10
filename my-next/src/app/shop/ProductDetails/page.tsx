@@ -28,8 +28,6 @@ export default async function ProductDetails({
     beforesale?: string;
   }>;
 }) {
-  console.log(searchParams);
-
   const t = await getTranslations();
   const searrchparams = await searchParams;
   let product: productType | null = null;

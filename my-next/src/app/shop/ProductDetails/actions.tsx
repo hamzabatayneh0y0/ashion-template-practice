@@ -24,7 +24,7 @@ export default function Actions({ id }: { id: number }) {
       setc(my.color ?? "");
       sets(my.size ?? "");
     }
-  }, [my]);
+  }, []);
 
   useEffect(() => {
     if (fav || cart) {
@@ -38,7 +38,7 @@ export default function Actions({ id }: { id: number }) {
         },
       });
     }
-  }, [s, q, c, fav, cart, dispatch, id]);
+  }, [s, q, c]);
 
   function handleSize(e: React.MouseEvent<HTMLSpanElement>) {
     const size = e.currentTarget.getAttribute("data-size") || "";

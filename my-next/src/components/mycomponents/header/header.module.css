@@ -89,6 +89,7 @@
   transform: rotate(0deg);
   transition: 300ms;
   position: relative;
+  font-size: 15px;
   transform-origin: center center;
 }
 .pages:hover .plus {

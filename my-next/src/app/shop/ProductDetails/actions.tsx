@@ -1,10 +1,11 @@
 "use client";
 
 import { useUser } from "@/components/mycomponents/usercontext/contextProvider";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GoHeart } from "react-icons/go";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { useTranslations } from "next-intl";
+import { CheckCircle } from "lucide-react";
 
 export default function Actions({ id }: { id: number }) {
   const t = useTranslations();
@@ -13,10 +14,11 @@ export default function Actions({ id }: { id: number }) {
   const active = "text-red-500";
   const fav = state.products.some((e) => e.productId === id && e.favorite);
   const cart = state.products.some((e) => e.productId === id && e.cart);
-
+  const toast = useRef<HTMLDivElement | null>(null);
   const [q, setQ] = useState(1);
   const [s, sets] = useState("");
   const [c, setc] = useState("");
+  const time = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (my) {
@@ -53,7 +55,7 @@ export default function Actions({ id }: { id: number }) {
   return (
     <div className="flex flex-col gap-2">
       <span>
-        {t("product.quantity")}:
+        {t("product.quantity")} :{" "}
         <span className="border-1 border-gray-100 rounded-full inline-flex justify-between py-2 px-5 ">
           <span
             className="w-12 cursor-pointer text-center select-none"
@@ -72,15 +74,34 @@ export default function Actions({ id }: { id: number }) {
       </span>
 
       <span
-        onClick={() =>
+        onClick={() => {
+          if (toast.current) {
+            toast.current.style.transitionDuration = "0s";
+
+            toast.current.style.transform = "translateX(-100%)";
+          }
+          if (time.current) {
+            clearTimeout(time.current);
+          }
+
           dispatch({
             type: "cart",
             payload: { id, size: s, color: c, quantity: q },
-          })
-        }
-        className={`bg-red-500 rounded-full cursor-pointer ${
-          cart ? "text-green-500" : "text-white"
-        } py-2 px-6 flex items-center text-2xl w-fit`}
+          });
+
+          setTimeout(() => {
+            if (toast.current) {
+              toast.current.style.transitionDuration = "300ms";
+
+              toast.current.style.transform = "translateX(100%)";
+              time.current = setTimeout(() => {
+                if (toast.current)
+                  toast.current.style.transform = "translateX(-100%)";
+              }, 1000);
+            }
+          }, 50);
+        }}
+        className={`bg-red-500 rounded-full cursor-pointer select-none py-2 px-6 flex items-center text-2xl w-fit`}
       >
         <MdOutlineShoppingBag /> <span>{t("product.addToCart")}</span>
       </span>
@@ -127,6 +148,18 @@ export default function Actions({ id }: { id: number }) {
           ></span>
         ))}
       </span>
+
+      <div
+        ref={toast}
+        className="addtoast fixed bottom-10 start-0  bg-[#eee] dark:bg-black flex items-center gap-2 p-2 z-[223] translate-x-[-100%]"
+      >
+        <CheckCircle className="text-green-500" />
+        {cart ? (
+          <span>{t("Added to cart")}</span>
+        ) : (
+          <span>{t("removed from cart")}</span>
+        )}
+      </div>
     </div>
   );
 }

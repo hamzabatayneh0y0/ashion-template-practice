@@ -52,6 +52,7 @@
   },
 
   "checkoutform": {
+    "you are not logged in": "you are not logged in",
     "first_name": "First Name",
     "last_name": "Last Name",
     "country": "Country",
@@ -66,7 +67,18 @@
     "show_password": "Show password",
     "note": "Note about your order, e.g., special note for delivery",
     "order_notes": "Order Notes",
-    "coupon": "Have a coupon? Click here to enter your code."
+    "coupon": "Have a coupon? Click here to enter your code.",
+    "password_mismatch": "Passwords do not match",
+
+    "invalid_email": "Invalid email address",
+    "password_too_short": "Password must be at least 6 characters long",
+    "first_name_required": "First name is required",
+    "last_name_required": "Last name is required",
+    "country_required": "Country is required",
+    "address_required": "Address is required",
+    "city_required": "City is required",
+    "invalid_phone": "Invalid phone number",
+    "delete_account": "Delete Account"
   },
 
   "order": {
@@ -102,6 +114,11 @@
     "no_account": "if you do not have account please go to page",
     "register_page": "register"
   },
+  "email_placeholder": "type your email",
+  "password_placeholder": "type your password",
+  "login_button": "login",
+  "no_account": "if you do not have account please go to page",
+  "register_page": "register",
 
   "edit_info": "Edit Info",
   "save_info": "Save Info",
@@ -210,5 +227,37 @@
 
   "hotTrend": "Hot Trend",
   "bestSeller": "Best Seller",
-  "featured": "Featured"
+  "featured": "Featured",
+
+  "removed from cart": "removed from cart",
+  "Added to cart": "Added to cart",
+
+  "first_name": "First Name",
+  "last_name": "Last Name",
+  "password2": "Confirm Password",
+  "address": "Address",
+  "apartment": "Apartment (optional)",
+  "phone": "Phone Number",
+  "show_password": "Show Password",
+  "hide_password": "Hide Password",
+  "register": "Register",
+  "have_account": "Already have an account?",
+  "password_mismatch": "Passwords do not match",
+
+  "invalid_email": "Invalid email address",
+  "password_too_short": "Password must be at least 6 characters long",
+  "first_name_required": "First name is required",
+  "last_name_required": "Last name is required",
+  "country_required": "Country is required",
+  "address_required": "Address is required",
+  "city_required": "City is required",
+  "invalid_phone": "Invalid phone number",
+  "delete_account": "Delete Account",
+
+  "Are you sure you want to delete your account?": "Are you sure you want to delete your account?",
+
+  "Yes, I&apos;m sure": "Yes, I'm sure",
+
+  "No, cancel": "No, cancel",
+  "you are not logged in": "you are not logged in"
 }

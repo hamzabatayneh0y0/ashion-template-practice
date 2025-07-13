@@ -21,14 +21,15 @@ interface productType {
 export default function Order({ products }: { products: productType[] }) {
   const t = useTranslations("order");
   const { state } = useUser();
+
   const [pay, setpay] = useState("");
   const cartProducts = products.filter((e) =>
-    state.products.some((p) => p.productId === e.id && p.cart)
+    state.products?.some((p) => p.productId === e.id && p.cart)
   );
   let tSum: number = 0;
 
   return (
-    <ul className="bg-gray-200 container m-auto flex flex-col gap-3 p-5 my-5 rounded-md h-fit md:basis-[40%]">
+    <ul className="bg-gray-200 dark:bg-black container m-auto flex flex-col gap-3 p-5 my-5 rounded-md h-fit md:basis-[40%]">
       <li className="text-2xl font-bold pb-2 border-b-2 border-gray-400">
         {t("your_order")}
       </li>
@@ -53,9 +54,9 @@ export default function Order({ products }: { products: productType[] }) {
       <li className="flex justify-between items-center text-2xl pb-2 font-bold border-b-2 border-gray-400">
         <span>{t("total")}</span> <Money m={tSum} />
       </li>
-      {state.logedin && (
+      {!state.logedin && (
         <li>
-          <label htmlFor="" className="flex gap-2 cursor-pointer">
+          <label className="flex gap-2 cursor-pointer">
             <input type="checkbox" /> {t("create_account")}
           </label>
         </li>

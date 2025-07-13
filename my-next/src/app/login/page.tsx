@@ -2,14 +2,20 @@
 import Link from "next/link";
 import { ChangeEvent, useState } from "react";
 import { useTranslations } from "next-intl";
-
+import { LogIn } from "@/functoins/validation";
+import Alert from "@/components/mycomponents/formAletrt/formAlert";
+import { useRouter } from "next/navigation";
+import { useUser } from "@/components/mycomponents/usercontext/contextProvider";
 interface loginForm {
   email: string;
   password: string;
 }
 
 export default function Login() {
-  const t = useTranslations("login");
+  const t = useTranslations();
+  const [error, setError] = useState<string | undefined>();
+  const router = useRouter();
+  const { dispatch } = useUser();
   const [formlogin, setFormLogIn] = useState<loginForm>({
     email: "",
     password: "",
@@ -19,22 +25,45 @@ export default function Login() {
   });
 
   function handleChang(e: ChangeEvent<HTMLInputElement>) {
-    const { name, value } = e.target; // هنا استخدمت name بدل type (في الكود الأصلي كان type وهذا غلط)
+    const { name, value } = e.target;
     setFormLogIn({ ...formlogin, [name]: value });
   }
 
   return (
     <div className="login h-screen flex justify-center items-center p-2">
       <form
+        noValidate
         action={""}
         className={
-          "flex justify-between items-center flex-col basis-full p-5 sm:p-12 gap-5 border-2 border-gray-400 rounded-sm md:basis-1/2 h-1/2"
+          "flex justify-between items-center flex-col basis-full p-5 sm:p-12 gap-5 border-2 border-gray-400 rounded-sm md:basis-1/2 "
         }
         onSubmit={(e) => {
           e.preventDefault();
+          const validation = LogIn(t).safeParse(formlogin);
+          if (!validation.success) {
+            setError(validation.error._zod.def[0].message);
+          } else {
+            const val = localStorage.getItem("user");
+            if (val) {
+              const user = JSON.parse(val);
+              if (
+                user.email === formlogin.email &&
+                user.password === formlogin.password
+              ) {
+                router.push("/");
+                setError(undefined);
+                setFormLogIn({ email: "", password: "" });
+                dispatch({ type: "login" });
+              }
+            }
+            router.push("/");
+            setError(undefined);
+            setFormLogIn({ email: "", password: "" });
+          }
         }}
       >
         <input
+          dir="ltr"
           type="email"
           name="email"
           autoComplete="true"
@@ -44,6 +73,7 @@ export default function Login() {
           onChange={handleChang}
         />
         <input
+          dir="ltr"
           type="password"
           name="password"
           value={formlogin.password}
@@ -51,7 +81,7 @@ export default function Login() {
           placeholder={t("password_placeholder")}
           onChange={handleChang}
         />
-
+        {error && <Alert type="error" message={error} />}
         <input
           type="submit"
           disabled={!dis}

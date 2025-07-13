@@ -62,8 +62,14 @@ export default function Carousel({ img }: { img: string }) {
             />
           </CarouselItem>
         </CarouselContent>
-        <CarouselPrevious className="left-0 top-[80%] translate-y-[-50%]" />
-        <CarouselNext className="right-0 top-[80%] translate-y-[-50%]" />
+        <CarouselPrevious
+          style={{ backgroundColor: "black" }}
+          className="left-0 top-[80%] translate-y-[-50%]"
+        />
+        <CarouselNext
+          style={{ backgroundColor: "black" }}
+          className="right-0 top-[80%] translate-y-[-50%]"
+        />
       </UICarousel>
       <div className="flex justify-center gap-2 mt-4">
         {Array.from({ length: count }).map((_, index) => (

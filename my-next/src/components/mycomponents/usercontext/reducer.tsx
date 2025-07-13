@@ -2,18 +2,30 @@
 
 import { StateType, ActionType, ProductType } from "./Type";
 const intialState: StateType = {
-  userId: 123,
-  name: "Hamza Batayneh",
-  email: "example@gmail.com",
-  password: "12345",
+  userId: undefined,
+  first_name: "",
+  last_name: "",
+  email: "",
+  password: "",
   img: "/icon-7797704_640.png",
+  country: "",
+  address: "",
+  apartment: "",
+  city: "",
+  phone: "",
 
-  logedin: true,
-  location: {
-    country: "joradan",
-    city: "irbid",
-  },
-  products: [],
+  logedin: false,
+
+  products: [
+    {
+      productId: -1,
+      quantity: 1,
+      favorite: false,
+      cart: false,
+      size: "M",
+      color: "black",
+    },
+  ],
 };
 export default function reducer(state: StateType, action: ActionType) {
   switch (action.type) {
@@ -25,7 +37,7 @@ export default function reducer(state: StateType, action: ActionType) {
       return userobj ? { ...userobj } : intialState;
     }
     case "cart": {
-      const found = state.products.some((e) => {
+      const found = state.products?.some((e) => {
         return action.payload?.id == e.productId;
       });
 
@@ -65,7 +77,7 @@ export default function reducer(state: StateType, action: ActionType) {
     }
 
     case "favorite": {
-      const found = state.products.some((e) => {
+      const found = state.products?.some((e) => {
         return action.payload?.id == e.productId;
       });
 
@@ -94,7 +106,6 @@ export default function reducer(state: StateType, action: ActionType) {
         };
         updatedProducts = [...state.products, product];
       }
-
       const cleanedProducts = updatedProducts.filter(
         (e) => e.favorite || e.cart
       );
@@ -123,10 +134,15 @@ export default function reducer(state: StateType, action: ActionType) {
     case "updateInfo": {
       const newstate = {
         ...state,
-        name: action.payload?.username,
-        email: action.payload?.useremail,
-        password: action.payload?.userpassword,
-        location: action.payload?.userlocation,
+        first_name: action.payload?.first_name || state.first_name,
+        last_name: action.payload?.last_name || state.last_name,
+        email: action.payload?.email || state.email,
+        password: action.payload?.password || state.password,
+        country: action.payload?.country || state.country,
+        address: action.payload?.address || state.address,
+        apartment: action.payload?.apartment || state.apartment,
+        city: action.payload?.city || state.city,
+        phone: action.payload?.phone || state.phone,
       };
       localStorage.setItem("user", JSON.stringify(newstate));
       return newstate;
@@ -139,7 +155,44 @@ export default function reducer(state: StateType, action: ActionType) {
       localStorage.setItem("user", JSON.stringify(newstate));
       return newstate;
     }
+    case "delete": {
+      const newstate = {
+        ...intialState,
+      };
+      localStorage.setItem("user", JSON.stringify(newstate));
+      return intialState;
+    }
+    case "register": {
+      const newstate = {
+        userId: Date.now(),
+        first_name: action.payload?.first_name,
+        last_name: action.payload?.last_name,
+        email: action.payload?.email,
+        password: action.payload?.password,
+        password2: action.payload?.password2,
+        country: action.payload?.country,
+        address: action.payload?.address,
+        apartment: action.payload?.apartment,
+        city: action.payload?.city,
+        phone: action.payload?.phone,
+        img: "/icon-7797704_640.png",
+        logedin: true,
+        products: [],
+      };
 
+      localStorage.setItem("user", JSON.stringify(newstate));
+      return newstate;
+    }
+    case "logout": {
+      const newstate = { ...state, logedin: false };
+      localStorage.setItem("user", JSON.stringify(newstate));
+      return newstate;
+    }
+    case "login": {
+      const newstate = { ...state, logedin: true };
+      localStorage.setItem("user", JSON.stringify(newstate));
+      return newstate;
+    }
     default:
       return state;
   }

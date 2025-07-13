@@ -20,7 +20,7 @@ export default function Header() {
     "men's clothing",
     "women's clothing",
   ];
-  const { state } = useUser();
+  const { state, dispatch } = useUser();
   const [appear, setAppear] = useState<boolean>(false);
   const [ul, setUl] = useState<boolean>(false);
   const open = useRef<HTMLDivElement | null>(null);
@@ -71,14 +71,14 @@ export default function Header() {
             }
           >
             <Link
-              className={`${style.link} ${style.pages} flex justify-between items-center`}
+              className={`${style.link} ${style.pages} flex justify-between gap-1 items-center`}
               href={""}
               onClick={() => {
                 setUl((prv) => !prv);
               }}
             >
               <span> {t("Pages")}</span>
-              <FaPlus className={`${style.plus} plus`} />
+              <FaPlus className={`${style.plus} plus `} />
             </Link>
             <div
               className={`${style.tr} ${
@@ -118,7 +118,7 @@ export default function Header() {
           </Link>
 
           <p className="text-2xl text-gray-500">
-            {state.logedin ? (
+            {!state.logedin ? (
               <>
                 <Link
                   onClick={() => {
@@ -142,8 +142,9 @@ export default function Header() {
               <Link
                 onClick={() => {
                   setAppear(false);
+                  dispatch({ type: "logout" });
                 }}
-                href={""}
+                href={"/"}
               >
                 {t("LogOut")}
               </Link>
@@ -183,7 +184,11 @@ export default function Header() {
           >
             {" "}
             <Image
-              src={state.img.toString() || "/icon-7797704_640.png"}
+              src={
+                state.img.toString() && state.logedin
+                  ? state.img.toString()
+                  : "/icon-7797704_640.png"
+              }
               alt="user image"
               width={50}
               height={50}

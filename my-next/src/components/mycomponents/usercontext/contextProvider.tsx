@@ -17,24 +17,27 @@ interface userContextType {
 export const userContext = createContext<userContextType>({
   state: {
     userId: undefined,
-    name: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
     img: "/icon-7797704_640.png",
+    country: "",
+    address: "",
+    apartment: "",
+    city: "",
+    phone: "",
 
-    logedin: true,
-    location: {
-      country: "",
-      city: "",
-    },
+    logedin: false,
+
     products: [
       {
-        productId: undefined,
-        quantity: 0,
+        productId: -1,
+        quantity: 1,
         favorite: false,
         cart: false,
-        size: "",
-        color: "",
+        size: "M",
+        color: "black",
       },
     ],
   },
@@ -42,18 +45,30 @@ export const userContext = createContext<userContextType>({
 });
 
 const intialState: StateType = {
-  userId: 123,
-  name: "Hamza Batayneh",
-  email: "example@gmail.com",
-  password: "12345",
+  userId: undefined,
+  first_name: "",
+  last_name: "",
+  email: "",
+  password: "",
   img: "/icon-7797704_640.png",
+  country: "",
+  address: "",
+  apartment: "",
+  city: "",
+  phone: "",
 
-  logedin: true,
-  location: {
-    country: "joradan",
-    city: "irbid",
-  },
-  products: [],
+  logedin: false,
+
+  products: [
+    {
+      productId: -1,
+      quantity: 1,
+      favorite: false,
+      cart: false,
+      size: "M",
+      color: "black",
+    },
+  ],
 };
 export default function UserProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(reducer, intialState);

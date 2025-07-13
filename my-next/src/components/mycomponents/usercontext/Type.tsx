@@ -9,15 +9,18 @@ export interface ProductType {
 
 export interface StateType {
   userId: number | undefined;
-  name: string;
-  email: string;
-  password: string;
+  first_name?: string;
+  last_name?: string;
+  email?: string;
+  password?: string;
+  password2?: string;
+  country?: string;
+  address?: string;
+  apartment?: string;
+  city?: string;
+  phone?: string;
   img: string | ArrayBuffer;
   logedin: boolean;
-  location: {
-    country: string;
-    city: string;
-  };
   products: ProductType[];
 }
 export interface ActionType {
@@ -27,13 +30,18 @@ export interface ActionType {
     quantity?: number;
     color?: string;
     size?: string;
-    username?: string;
-    useremail?: string;
-    userpassword?: string;
-    userlocation?: {
-      country?: string;
-      city?: string;
-    };
+
     userimg?: string | ArrayBuffer;
+
+    first_name?: string;
+    last_name?: string;
+    email?: string;
+    password?: string;
+    password2?: string;
+    country?: string;
+    address?: string;
+    apartment?: string;
+    city?: string;
+    phone?: string;
   };
 }

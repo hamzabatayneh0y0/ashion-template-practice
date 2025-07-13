@@ -40,10 +40,10 @@ export default function ProductCard({
 
   useEffect(() => {
     setfav(
-      state.products.some((e) => e.productId === product?.id && e.favorite)
+      state.products?.some((e) => e.productId === product?.id && e.favorite)
     );
 
-    setcart(state.products.some((e) => e.productId === product?.id && e.cart));
+    setcart(state.products?.some((e) => e.productId === product?.id && e.cart));
   }, [state.products, product?.id]);
 
   function handleZoom() {
@@ -118,7 +118,7 @@ export default function ProductCard({
               onClick={handleCart}
               className={`${
                 style.icon3
-              } bg-white text-black  hover:text-red-500${
+              } bg-white text-black  hover:text-red-500 ${
                 cart ? "text-red-500 " : ""
               } rounded-full  text-4xl p-1  w-[15%] h-[15%] cursor-pointer`}
             />

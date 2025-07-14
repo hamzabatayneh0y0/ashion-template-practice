@@ -58,6 +58,7 @@ export default function Login() {
                 setError(t("Email or Password is not correct"));
               }
             }
+            setError(t("Email or Password is not correct"));
           }
         }}
       >

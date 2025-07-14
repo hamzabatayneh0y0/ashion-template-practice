@@ -151,7 +151,7 @@ export default function Actions({ id }: { id: number }) {
 
       <div
         ref={toast}
-        className="addtoast fixed bottom-10 start-0  bg-[#eee] dark:bg-black flex items-center gap-2 p-2 z-[223] translate-x-[-100%]"
+        className="addtoast fixed bottom-10 left-0  bg-[#eee] dark:bg-black flex items-center gap-2 p-2 z-[223] translate-x-[-100%]"
       >
         <CheckCircle className="text-green-500" />
         {cart ? (

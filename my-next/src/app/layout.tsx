@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   title: "Ashion",
   description: "استعرض أفضل المنتجات بأسعار منافسة وجودة عالية.",
   openGraph: {
-    title: "المتجر - تصفح منتجاتنا",
+    title: "Ashion Store",
     description: "استعرض أفضل المنتجات بأسعار منافسة وجودة عالية.",
     url: "https://ashion-template-practice.vercel.app",
     siteName: "متجري الإلكتروني",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "المتجر - تصفح منتجاتنا",
+    title: "Ashion Store",
     description: "استعرض أفضل المنتجات بأسعار منافسة وجودة عالية.",
     images: ["https://ashion-template-practice.vercel.app/logo.png"],
   },

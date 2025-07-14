@@ -15,7 +15,6 @@ import { FaPlus } from "react-icons/fa";
 export default function Header() {
   const cat: string[] = [
     "all",
-    "electronics",
     "jewelery",
     "men's clothing",
     "women's clothing",
@@ -50,7 +49,7 @@ export default function Header() {
           className={`max-lg:order-2 lg:hidden ${style.rtl}`}
         />
         <div
-          className={`flex justify-end gap-8 lg:grow max-lg:order-3 ${style.sidelinks} `}
+          className={`flex justify-end gap-5 lg:grow max-lg:order-3 ${style.sidelinks} `}
         >
           <Link
             onClick={() => {
@@ -61,7 +60,13 @@ export default function Header() {
           >
             {t("Home")}
           </Link>
-          <Link className={style.link} href={"/shop"}>
+          <Link
+            onClick={() => {
+              setAppear(false);
+            }}
+            className={style.link}
+            href={"/shop"}
+          >
             {t("Shop")}
           </Link>
           <div
@@ -117,7 +122,7 @@ export default function Header() {
             {t("Contact")}
           </Link>
 
-          <p className="text-2xl text-gray-500">
+          <p className="text-[20px] text-gray-500">
             {!state.logedin ? (
               <>
                 <Link
@@ -151,7 +156,7 @@ export default function Header() {
             )}
           </p>
         </div>
-        <div className="header-icons lg:m-0 flex gap-5 me-5 items-center text-3xl font-bold max-lg:mt-20 max-lg:justify-end max-lg:w-full">
+        <div className="header-icons  lg:m-0 flex gap-3 me-5 items-center text-3xl font-bold max-lg:mt-20 max-lg:justify-end max-lg:w-full">
           <CiSearch
             className="cursor-pointer"
             onClick={() => {

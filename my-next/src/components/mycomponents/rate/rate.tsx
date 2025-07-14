@@ -41,7 +41,7 @@ export default function Rate({ rate }: { rate: number }) {
     }
   }
   return (
-    <div className="rate flex gap-1 w-fit">
+    <div dir="ltr" className="rate flex gap-1 w-fit">
       {stars.map((e) => {
         return e;
       })}

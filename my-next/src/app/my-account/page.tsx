@@ -287,131 +287,129 @@ export default function MyAccount() {
               )}
             </div>
           </div>
-          <div className="flex flex-col gap-12 mt-12">
-            <h2 className="uppercase border-t-2 pt-2 text-3xl border-gray-200">
-              {t("setting")}
-            </h2>
-            <p className="flex justify-between">
-              <span className="text-2xl">{t("theme")}: </span>
-              <select
-                className="dark:bg-gray-950 outline-0 py-1 px-5  rounded-sm border-2 cursor-pointer"
-                value={theme}
-                id="theme"
-                onChange={(e) => setTheme(e.target.value)}
-              >
-                <option className=" cursor-pointer" value="dark">
-                  {t("dark")}
-                </option>
-                <option className=" cursor-pointer" value="light">
-                  {t("light")}
-                </option>
-                <option className=" cursor-pointer" value="system">
-                  {t("system")}
-                </option>
-              </select>
-            </p>
-            <p className="flex justify-between">
-              <span className="text-2xl">{t("language")}: </span>
-              <select
-                className="dark:bg-gray-950 outline-0 py-1 px-5 rounded-sm border-2 cursor-pointer"
-                value={lang}
-                id="lang"
-                onChange={(e) => setLang(e.target.value)}
-              >
-                <option className=" cursor-pointer" value="ar">
-                  {t("arabic")}
-                </option>
-                <option className=" cursor-pointer" value="en">
-                  {t("english")}
-                </option>
-              </select>
-            </p>
-
-            <p className="flex justify-between">
-              <span className="text-2xl">{t("currency")}: </span>
-              <select
-                className="dark:bg-gray-950 outline-0 py-1 px-5 rounded-sm border-2 cursor-pointer"
-                value={cur}
-                id="cur"
-                onChange={(e) => setCur(e.target.value)}
-              >
-                <option className=" cursor-pointer" value="jd">
-                  {t("jd")}
-                </option>
-                <option className=" cursor-pointer" value="us">
-                  {t("us")}
-                </option>
-              </select>
-            </p>
-            <button
-              data-modal-target="popup-modal"
-              data-modal-toggle="popup-modal"
-              type="button"
-              onClick={() => {
-                setShow(true);
-              }}
-              className="rounded-sm p-4 cursor-pointer shadow-sm text-white bg-red-500 dark:bg-black hover:shadow-lg uppercase me-auto transition-all hover:bg-red-600"
-            >
-              {t("delete_account")}
-            </button>
-
-            <div
-              id="popup-modal"
-              tabIndex={-1}
-              onClick={(e) => {
-                if (e.currentTarget === e.target) setShow(false);
-              }}
-              className={`${
-                show ? "flex" : "hidden"
-              } overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
-            >
-              <div className="relative p-4 w-full max-w-md max-h-full">
-                <div className="relative bg-white rounded-lg shadow-sm dark:bg-gray-950">
-                  <button
-                    type="button"
-                    className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                    data-modal-hide="popup-modal"
-                  ></button>
-                  <div className="p-4 md:p-5 text-center">
-                    <div className="">
-                      <Alert
-                        type="error"
-                        message={t(
-                          "Are you sure you want to delete your account?"
-                        )}
-                      />
-                    </div>
-                    <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400"></h3>
-                    <button
-                      data-modal-hide="popup-modal"
-                      type="button"
-                      onClick={() => {
-                        setShow(false);
-                        dispatch({ type: "delete" });
-                      }}
-                      className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
-                    >
-                      {t("Yes, I&apos;m sure")}
-                    </button>
-                    <button
-                      data-modal-hide="popup-modal"
-                      type="button"
-                      onClick={() => {
-                        setShow(false);
-                      }}
-                      className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                    >
-                      {t("No, cancel")}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </>
       ) : (
         <p className="p-5">{t("you are not logged in")}</p>
       )}
+      <div className="flex flex-col gap-12 mt-12">
+        <h2 className="uppercase border-t-2 pt-2 text-3xl border-gray-200">
+          {t("setting")}
+        </h2>
+        <p className="flex justify-between">
+          <span className="text-2xl">{t("theme")}: </span>
+          <select
+            className="dark:bg-gray-950 outline-0 py-1 px-5  rounded-sm border-2 cursor-pointer"
+            value={theme}
+            id="theme"
+            onChange={(e) => setTheme(e.target.value)}
+          >
+            <option className=" cursor-pointer" value="dark">
+              {t("dark")}
+            </option>
+            <option className=" cursor-pointer" value="light">
+              {t("light")}
+            </option>
+            <option className=" cursor-pointer" value="system">
+              {t("system")}
+            </option>
+          </select>
+        </p>
+        <p className="flex justify-between">
+          <span className="text-2xl">{t("language")}: </span>
+          <select
+            className="dark:bg-gray-950 outline-0 py-1 px-5 rounded-sm border-2 cursor-pointer"
+            value={lang}
+            id="lang"
+            onChange={(e) => setLang(e.target.value)}
+          >
+            <option className=" cursor-pointer" value="ar">
+              {t("arabic")}
+            </option>
+            <option className=" cursor-pointer" value="en">
+              {t("english")}
+            </option>
+          </select>
+        </p>
+
+        <p className="flex justify-between">
+          <span className="text-2xl">{t("currency")}: </span>
+          <select
+            className="dark:bg-gray-950 outline-0 py-1 px-5 rounded-sm border-2 cursor-pointer"
+            value={cur}
+            id="cur"
+            onChange={(e) => setCur(e.target.value)}
+          >
+            <option className=" cursor-pointer" value="jd">
+              {t("jd")}
+            </option>
+            <option className=" cursor-pointer" value="us">
+              {t("us")}
+            </option>
+          </select>
+        </p>
+        <button
+          data-modal-target="popup-modal"
+          data-modal-toggle="popup-modal"
+          type="button"
+          onClick={() => {
+            setShow(true);
+          }}
+          className="rounded-sm p-4 cursor-pointer shadow-sm text-white bg-red-500 dark:bg-black hover:shadow-lg uppercase me-auto transition-all hover:bg-red-600"
+        >
+          {t("delete_account")}
+        </button>
+
+        <div
+          id="popup-modal"
+          tabIndex={-1}
+          onClick={(e) => {
+            if (e.currentTarget === e.target) setShow(false);
+          }}
+          className={`${
+            show ? "flex" : "hidden"
+          } overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
+        >
+          <div className="relative p-4 w-full max-w-md max-h-full">
+            <div className="relative bg-white rounded-lg shadow-sm dark:bg-gray-950">
+              <button
+                type="button"
+                className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-hide="popup-modal"
+              ></button>
+              <div className="p-4 md:p-5 text-center">
+                <div className="">
+                  <Alert
+                    type="error"
+                    message={t("Are you sure you want to delete your account?")}
+                  />
+                </div>
+                <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400"></h3>
+                <button
+                  data-modal-hide="popup-modal"
+                  type="button"
+                  onClick={() => {
+                    setShow(false);
+                    dispatch({ type: "delete" });
+                  }}
+                  className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
+                >
+                  {t("Yes, I&apos;m sure")}
+                </button>
+                <button
+                  data-modal-hide="popup-modal"
+                  type="button"
+                  onClick={() => {
+                    setShow(false);
+                  }}
+                  className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                >
+                  {t("No, cancel")}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

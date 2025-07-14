@@ -26,7 +26,7 @@ interface productType1 {
 }
 
 export default function Cart() {
-  const t = useTranslations("cart"); // حدد النيمسبيس "cart"
+  const t = useTranslations("cart");
   const { state, dispatch } = useUser();
   const [products, setProducts] = useState<productType1[]>();
 

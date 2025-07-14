@@ -54,11 +54,10 @@ export default function Login() {
                 setError(undefined);
                 setFormLogIn({ email: "", password: "" });
                 dispatch({ type: "login" });
+              } else {
+                setError(t("Email or Password is not correct"));
               }
             }
-            router.push("/");
-            setError(undefined);
-            setFormLogIn({ email: "", password: "" });
           }
         }}
       >

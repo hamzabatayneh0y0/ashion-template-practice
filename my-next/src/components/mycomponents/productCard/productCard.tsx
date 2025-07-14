@@ -37,7 +37,6 @@ export default function ProductCard({
   const { state, dispatch } = useUser();
   const [fav, setfav] = useState(false);
   const [cart, setcart] = useState(false);
-
   useEffect(() => {
     setfav(
       state.products?.some((e) => e.productId === product?.id && e.favorite)
@@ -84,7 +83,7 @@ export default function ProductCard({
           className={`${
             style.img
           } border-2 overflow-hidden flex items-center justify-center p-2 ${
-            row ? "basis-[50%] h-full" : "h-[300px] w-full"
+            row ? "basis-[50%] h-fit" : "h-[300px] w-full"
           } border-black relative`}
         >
           <Image

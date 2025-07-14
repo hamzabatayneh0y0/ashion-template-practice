@@ -254,5 +254,7 @@
 
   "No, cancel": "لا، إلغاء",
 
-  "you are not logged in": "أنت غير مسجل الدخول"
+  "you are not logged in": "أنت غير مسجل الدخول",
+
+  "Email or Password is not correct": "الإيميل أو كلمة السر غير صحيحة"
 }

@@ -40,7 +40,7 @@ export default async function Trend() {
         </h2>
         <ProductCard row product={data[1]} label="none" beforesale={0} />
         <ProductCard row product={data[5]} label="none" beforesale={0} />
-        <ProductCard row product={data[10]} label="none" beforesale={0} />
+        <ProductCard row product={data[19]} label="none" beforesale={0} />
       </div>
 
       <div className="flex flex-col gap-5">
@@ -52,14 +52,14 @@ export default async function Trend() {
         </h2>
         <ProductCard row product={data[3]} label="none" beforesale={0} />
         <ProductCard row product={data[19]} label="none" beforesale={0} />
-        <ProductCard row product={data[11]} label="none" beforesale={0} />
+        <ProductCard row product={data[2]} label="none" beforesale={0} />
       </div>
 
       <div className="flex flex-col gap-5">
         <h2 className="text-2xl font-[--font-cookie]">
           <span className="border-b-2 border-red-500">{t("featured")}</span>
         </h2>
-        <ProductCard row product={data[12]} label="none" beforesale={0} />
+        <ProductCard row product={data[5]} label="none" beforesale={0} />
         <ProductCard row product={data[17]} label="none" beforesale={0} />
         <ProductCard row product={data[6]} label="none" beforesale={0} />
       </div>

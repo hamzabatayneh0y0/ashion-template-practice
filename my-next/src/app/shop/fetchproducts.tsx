@@ -53,7 +53,7 @@ export default function Products({
   const favoriteProducts = products.filter((e) =>
     cat !== "all"
       ? e.category === cat && e.price >= 0 && e.price <= price
-      : e.price >= 0 && e.price <= price
+      : e.price >= 0 && e.price <= price && e.category !== "electronics"
   );
 
   if (favoriteProducts.length === 0)

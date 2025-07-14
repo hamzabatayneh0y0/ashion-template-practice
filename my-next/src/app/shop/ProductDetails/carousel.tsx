@@ -29,16 +29,16 @@ export default function Carousel({ img }: { img: string }) {
 
   return (
     <div>
-      <UICarousel setApi={setApi}>
+      <UICarousel setApi={setApi} dir="ltr">
         <CarouselContent>
-          <CarouselItem>
+          <CarouselItem className="">
             <Image
               src={img}
               alt="product image"
               loading="lazy"
               width={300}
               height={300}
-              style={{ width: "100%" }}
+              style={{ width: "100%", height: "auto" }}
             />
           </CarouselItem>
           <CarouselItem>
@@ -48,7 +48,7 @@ export default function Carousel({ img }: { img: string }) {
               loading="lazy"
               width={300}
               height={300}
-              style={{ width: "100%" }}
+              style={{ width: "100%", height: "auto" }}
             />
           </CarouselItem>
           <CarouselItem>
@@ -58,7 +58,7 @@ export default function Carousel({ img }: { img: string }) {
               loading="lazy"
               width={300}
               height={300}
-              style={{ width: "100%" }}
+              style={{ width: "100%", height: "auto" }}
             />
           </CarouselItem>
         </CarouselContent>

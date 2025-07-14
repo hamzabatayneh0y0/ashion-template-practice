@@ -14,7 +14,6 @@ export default function Shop() {
   const t = useTranslations("shop");
   const cat: string[] = [
     "all",
-    "electronics",
     "jewelery",
     "men's clothing",
     "women's clothing",

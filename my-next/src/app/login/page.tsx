@@ -94,7 +94,7 @@ export default function Login() {
         />
         <p className="text-gray-500 font-medium uppercase text-center transition-all">
           {t("no_account")}{" "}
-          <Link className="text-blue-500" href={"/regester"}>
+          <Link className="text-blue-500" href={"/register"}>
             {t("register_page")}
           </Link>{" "}
         </p>

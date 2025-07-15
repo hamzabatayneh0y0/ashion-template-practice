@@ -10,6 +10,7 @@ import { useUser } from "../usercontext/contextProvider";
 import Link from "next/link";
 import { useZoom } from "../zoom/zoomProvider";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 interface productType {
   category: string;
   description: string;
@@ -37,6 +38,7 @@ export default function ProductCard({
   const { state, dispatch } = useUser();
   const [fav, setfav] = useState(false);
   const [cart, setcart] = useState(false);
+  const t = useTranslations();
   useEffect(() => {
     setfav(
       state.products?.some((e) => e.productId === product?.id && e.favorite)
@@ -82,8 +84,8 @@ export default function ProductCard({
         <div
           className={`${
             style.img
-          } border-2 overflow-hidden flex items-center justify-center p-2 ${
-            row ? "basis-[50%] h-fit" : "h-[300px] w-full"
+          } border-2 overflow-hidden flex items-center justify-center p-3 bg-white ${
+            row ? "basis-[50%] h-[200px]" : "h-[300px] w-full"
           } border-black relative`}
         >
           <Image
@@ -92,7 +94,7 @@ export default function ProductCard({
             loading="lazy"
             width={300}
             height={200}
-            style={{ height: "200px", width: "auto" }}
+            style={{ height: "auto", width: "auto" }}
           />
           <Label type={label} />
           <div
@@ -133,7 +135,9 @@ export default function ProductCard({
               row ? "basis-50% " : "justify-center items-center "
             }  gap-5`}
           >
-            <h3 className="font-[500]">{product.title}</h3>
+            <h3 className="font-[500]">
+              {t(`${product.title.replace(/\./g, ",")}`)}
+            </h3>
             <Rate rate={product.rating.rate} />
             <p className="">
               {label == "sale" ? (

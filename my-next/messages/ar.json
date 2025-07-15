@@ -17,7 +17,7 @@
 
   "Copyright \u00a9 2025 All rights reserved | This template is made with by Colorlib": "حقوق النشر \u00a9 2025 جميع الحقوق محفوظة | هذا القالب من تصميم Colorlib",
 
-  "footerdescription": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي.",
+  "footerdescription": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي,",
 
   "Home": "الرئيسية",
   "Shop": "المتجر",
@@ -35,8 +35,8 @@
   "system": "النظام",
 
   "blog": {
-    "noBadBlood": "لا توجد عداوة! السبب الذي جعل تمار جادج تصالح أخيرًا مع...",
-    "amfCannes": "نجوم مهرجان كان على السجادة الحمراء، كيندال جينر، باميلا...",
+    "noBadBlood": "لا توجد عداوة! السبب الذي جعل تمار جادج تصالح أخيرًا مع,,,",
+    "amfCannes": "نجوم مهرجان كان على السجادة الحمراء، كيندال جينر، باميلا,,,",
     "loadMore": "تحميل المزيد من المشاركات",
     "loadLess": "تحميل مشاركات أقل"
   },
@@ -48,10 +48,11 @@
     "price": "السعر",
     "quantity": "الكمية",
     "total": "الإجمالي",
-    "nothingFound": "لم يتم العثور على شيء..."
+    "nothingFound": "لم يتم العثور على شيء,,,"
   },
 
   "checkoutform": {
+    "Done": "تم",
     "you are not logged in": "أنت غير مسجل الدخول",
     "first_name": "الاسم الأول",
     "last_name": "اسم العائلة",
@@ -67,7 +68,7 @@
     "show_password": "إظهار كلمة المرور",
     "note": "ملاحظة حول طلبك، مثلاً ملاحظة خاصة للتوصيل",
     "order_notes": "ملاحظات الطلب",
-    "coupon": "هل لديك قسيمة؟ اضغط هنا لإدخال الكود."
+    "coupon": "هل لديك قسيمة؟ اضغط هنا لإدخال الكود,"
   },
 
   "order": {
@@ -93,7 +94,7 @@
   },
 
   "favorite": {
-    "nothing_found": "لم يتم العثور على أي شيء..."
+    "nothing_found": "لم يتم العثور على أي شيء,,,"
   },
 
   "login": {
@@ -153,7 +154,7 @@
   "relatedProducts": "منتجات مشابهة",
 
   "fetchproducts": {
-    "notFound": "عذرًا، لم نعثر على ما تبحث عنه."
+    "notFound": "عذرًا، لم نعثر على ما تبحث عنه,"
   },
 
   "shop": {
@@ -169,7 +170,7 @@
 
   "home": {
     "womenTitle": "أزياء نسائية",
-    "womenDisc": "نص تجريبي عن الموضة النسائية...",
+    "womenDisc": "نص تجريبي عن الموضة النسائية,,,",
     "menTitle": "أزياء رجالية",
     "menDisc": "358 منتج",
     "kidTitle": "أزياء الأطفال",
@@ -256,5 +257,45 @@
 
   "you are not logged in": "أنت غير مسجل الدخول",
 
-  "Email or Password is not correct": "الإيميل أو كلمة السر غير صحيحة"
+  "Email or Password is not correct": "الإيميل أو كلمة السر غير صحيحة",
+
+  "Fjallraven - Foldsack No, 1 Backpack, Fits 15 Laptops": "فجالرافن - حقيبة فولدساك رقم 1، تتسع لـ 15 لابتوب",
+  "Your perfect pack for everyday use and walks in the forest, Stash your laptop (up to 15 inches) in the padded sleeve, your everyday": "حقيبة مثالية للاستخدام اليومي والمشي في الغابة, خزّن لابتوبك (حتى 15 إنش) في الجيب المبطن مع حاجياتك اليومية",
+  "Mens Casual Premium Slim Fit T-Shirts ": "تيشيرتات رجالية كاجوال فاخرة ضيقة",
+  "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing, And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans, The Henley style round neckline includes a three-button placket,": "قَصّة ضيقة، أكمام راجلان بلون مختلف، بثلاثة أزرار وياقة مستديرة, قماش خفيف وناعم للتهوية والراحة, خياطة متينة وياقة هنلي بتصميم عصري,",
+  "Mens Cotton Jacket": "جاكيت قطني رجالي",
+  "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors, Good gift choice for you or your family member, A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day,": "جاكيت خارجي ممتاز للربيع أو الخريف أو الشتاء، مناسب للعمل أو الرحلات أو التسلق أو ركوب الدراجات أو السفر, هدية رائعة لوالدك، زوجك، أو ابنك في عيد الشكر أو الكريسماس,",
+  "Mens Casual Slim Fit": "تيشيرت رجالي ضيق كاجوال",
+  "The color could be slightly different between on the screen and in practice, / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description,": "قد تختلف الألوان قليلاً بين الشاشة والواقع, يرجى مراجعة جدول المقاسات بدقة لأن الجسم يختلف من شخص لآخر,",
+  "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet": "سوار جون هاردي نسائي من مجموعة الأساطير - التنين الذهبي والفضي",
+  "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl, Wear facing inward to be bestowed with love and abundance, or outward for protection,": "من مجموعة الأساطير لدينا، استُلهم التنين ناغا من التنين المائي الأسطوري الذي يحمي لؤلؤة البحر, ارتديه للداخل لجلب الحب والوفرة، أو للخارج للحماية,",
+  "Solid Gold Petite Micropave ": "خاتم صغير من الذهب الخالص بترصيع دقيق",
+  "Satisfaction Guaranteed, Return or exchange any order within 30 days,Designed and sold by Hafeez Center in the United States, Satisfaction Guaranteed, Return or exchange any order within 30 days,": "رضاكم مضمون, يمكنك إرجاع أو استبدال أي طلب خلال 30 يومًا, صُمم وبِيع من قبل مركز حفيظ في الولايات المتحدة,",
+  "White Gold Plated Princess": "خاتم أميرة مطلي بالذهب الأبيض",
+  "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her, Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day,,,": "خاتم خطوبة ماسي كلاسيكي من أجلها, مثالي للهدايا في الخطوبة، الزواج، الذكرى السنوية، عيد الحب,,,",
+  "Pierced Owl Rose Gold Plated Stainless Steel Double": "أقراط من الستانلس ستيل مطلية بالذهب الوردي من بيرسد أوول",
+  "Rose Gold Plated Double Flared Tunnel Plug Earrings, Made of 316L Stainless Steel": "أقراط نفق مزدوج مطلية بالذهب الوردي, مصنوعة من ستانلس ستيل 316L,",
+  "WD 2TB Elements Portable External Hard Drive - USB 3,0 ": "قرص صلب خارجي محمول WD 2TB - USB 3,0",
+  "USB 3,0 and USB 2,0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8,1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system": "متوافق مع USB 3,0 و 2,0, نقل بيانات سريع وأداء محسّن, سعة كبيرة، مهيأ لـ Windows, قد يتطلب إعادة تهيئة لأنظمة أخرى,",
+
+  "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2,5": "قرص SSD سيليكون باور 256GB ثلاثي الأبعاد مع كاش SLC لتحسين الأداء - ساتا 2,5",
+  "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance, The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks, Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability,": "تم استخدام ذاكرة NAND ثلاثية الأبعاد لتوفير سرعات نقل عالية، وإقلاع أسرع، وتحسين أداء النظام, تصميم نحيف 7 مم مناسب للألترابوك, يدعم TRIM وRAID وECC,",
+  "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive": "قرص ألعاب WD بسعة 4 تيرابايت يعمل مع PS4 - خارجي محمول",
+  "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty": "وسّع تجربة اللعب على PS4، تصميم أنيق بسعة عالية، إعداد سهل وسريع، وضمان لمدة 3 سنوات,",
+  "Acer SB220Q bi 21,5 inches Full HD (1920 x 1080) IPS Ultra-Thin": "شاشة Acer SB220Q بحجم 21,5 بوصة بدقة Full HD وبتقنية IPS فائق النحافة",
+  "21, 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology, No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9, Color Supported - 16, 7 million colors, Brightness - 250 nit Tilt angle -5 degree to 15 degree, Horizontal viewing angle-178 degree, Vertical viewing angle-178 degree 75 hertz": "شاشة 21,5 إنش بدقة 1080p IPS مع تقنية FreeSync من Radeon، معدل تحديث 75Hz، تصميم بدون حواف، وقت استجابة 4ms، سطوع 250nits، زوايا عرض واسعة,",
+  "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ": "شاشة ألعاب منحنية سامسونج 49 إنش CHG90 بتقنية QLED ومعدل تحديث 144Hz",
+  "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag": "شاشة ألعاب منحنية 49 إنش بنسبة عرض 32:9، تعادل شاشتين 27 إنش, تقنية QLED، دعم HDR، معدل تحديث 144Hz، استجابة 1ms، ألوان واقعية,",
+  "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats": "جاكيت نسائي شتوي 3 في 1 من BIYLACLESEN للتزلج",
+  "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece, Detachable Functional Liner: Skin Friendly, Lightweigt and Warm,Stand Collar Liner jacket, keep you warm in cold weather, Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside,Zippered Hand Pockets and Hidden Pocket keep your things secure, Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit, 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together, It is suitable for different season and help you adapt to different climates": "جاكيت 3 في 1 نسائي، بطانة قابلة للفصل، ناعم ودافئ، مقاوم للرياح والماء, جيوب بسحاب، تصميم عملي يناسب جميع الفصول,",
+  "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket": "جاكيت نسائي موتو جلد صناعي بغطاء رأس قابل للإزالة من Lock and Love",
+  "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON": "100٪ بولي يوريثان من الخارج، جاكيت جلد صناعي أنيق بغطاء رأس قابل للإزالة، تصميم جينز، خياطة جانبية، يُغسل يدويًا فقط,",
+  "Rain Jacket Women Windbreaker Striped Climbing Raincoats": "جاكيت مطري نسائي ضد الرياح بخطوط وتسلق",
+  "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design, Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it,Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look,": "جاكيت مطري خفيف للسفر أو اللبس اليومي، تصميم بخطوط، بغطاء رأس مبطن بقطن، خصر قابل للتعديل، وجيوب جانبية عملية,",
+  "MBJ Women's Solid Short Sleeve Boat Neck V ": "تيشيرت نسائي برقبة قارب قصيرة من MBJ",
+  "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem": "95٪ رايون، 5٪ سباندكس, قماش خفيف ومطاطي للراحة، خياطة مزدوجة، تصميم بسيط وأنيق,",
+  "Opna Women's Short Sleeve Moisture": "تيشيرت نسائي قصير الأكمام مقاوم للرطوبة من Opna",
+  "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort": "100٪ بوليستر، يُغسل في الغسالة، مقاوم للرطوبة، قماش خفيف ومريح بياقة V، تصميم نسائي أنيق,",
+  "DANVOUY Womens T Shirt Casual Cotton Short": "تيشيرت نسائي قطن كاجوال قصير من DANVOUY",
+  "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch,, Occasion: Casual/Office/Beach/School/Home/Street, Season: Spring,Summer,Autumn,Winter,": "95٪ قطن، 5٪ سباندكس, تيشيرت كاجوال بطباعة وحروف، بياقة V، ناعم ومرن، مناسب لكل المواسم والمناسبات,"
 }

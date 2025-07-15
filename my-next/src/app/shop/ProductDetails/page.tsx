@@ -29,6 +29,7 @@ export default async function ProductDetails({
   }>;
 }) {
   const t = await getTranslations();
+
   const searrchparams = await searchParams;
   let product: productType | null = null;
   let sugestions: productType[] | null = null;
@@ -52,7 +53,6 @@ export default async function ProductDetails({
   } catch (erorr) {
     console.log(erorr);
   }
-
   if (!product) return <Loading />;
 
   return (
@@ -63,7 +63,9 @@ export default async function ProductDetails({
         </div>
 
         <div className="info p-5 flex flex-col gap-5 lg:mx-12 transition-all duration-300 lg:basis-[50%]">
-          <h2 className="font-[500] text-3xl">{product.title}</h2>
+          <h2 className="font-[500] text-3xl">
+            {t(`${product.title.replace(/\./g, ",")}`)}
+          </h2>
           <Rate rate={product.rating.rate} />
 
           <p>
@@ -81,7 +83,7 @@ export default async function ProductDetails({
             </span>
           </p>
 
-          <p>{product.description}</p>
+          <p>{t(`${product.description.replace(/\./g, ",")}`)}</p>
           <Actions id={product.id} />
         </div>
       </div>

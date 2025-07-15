@@ -14,7 +14,7 @@ export default function Alert({
   };
   return (
     <div className={`${theme[type]} flex items-center p-3 gap-2 w-full`}>
-      {message ? (
+      {type === "error" ? (
         <FaExclamationTriangle className="text-red-500" />
       ) : (
         <CheckCircle className="text-green-500" />

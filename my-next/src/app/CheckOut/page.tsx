@@ -28,7 +28,7 @@ export default async function CheckOut() {
   if (!products) return <Loading />;
 
   return (
-    <div className="checkout container m-auto md:flex gap-4 py-12">
+    <div className="checkout container m-auto md:flex gap-4 py-12 px-4">
       <FormCheckOut />
       <Order products={products} />
     </div>

@@ -22,7 +22,7 @@ export default function Order({ products }: { products: productType[] }) {
   const t = useTranslations("order");
   const { state } = useUser();
 
-  const [pay, setpay] = useState("");
+  const [pay, setpay] = useState("PayPal");
   const cartProducts = products.filter((e) =>
     state.products?.some((p) => p.productId === e.id && p.cart)
   );

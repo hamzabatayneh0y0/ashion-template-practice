@@ -114,7 +114,7 @@ export default function Actions({ id }: { id: number }) {
               payload: { id, size: s, color: c, quantity: q },
             })
           }
-          className={`bg-white hover:text-red-500 ${
+          className={`bg-white text-black hover:text-red-500 ${
             fav ? "text-red-500" : ""
           } rounded-full p-1 shadow-lg w-12 h-12 cursor-pointer `}
         />

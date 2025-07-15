@@ -5,13 +5,13 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { RegesterValidation } from "@/functoins/validation";
 import Alert from "@/components/mycomponents/formAletrt/formAlert";
-import { useRouter } from "next/navigation";
 
 export default function FormCheckOut() {
   const t = useTranslations("checkoutform");
-  const router = useRouter();
+  const tgeneral = useTranslations();
   const { state, dispatch } = useUser();
   const [show, setShow] = useState(false);
+  const [alert, setAlert] = useState<string | undefined>(undefined);
   const [form, setForm] = useState({
     first_name: "",
     last_name: "",
@@ -62,7 +62,7 @@ export default function FormCheckOut() {
       onSubmit={(e) => {
         e.preventDefault();
 
-        const validation = RegesterValidation(t).safeParse({
+        const validation = RegesterValidation(tgeneral).safeParse({
           first_name: form.first_name,
           last_name: form.last_name,
           phone: form.phone,
@@ -80,22 +80,23 @@ export default function FormCheckOut() {
           setError(validation.error.issues[0].message);
         } else {
           setError(undefined);
-
-          dispatch({
-            type: "register",
-            payload: {
-              first_name: form.first_name,
-              last_name: form.last_name,
-              phone: form.phone,
-              email: form.email,
-              password: form.password,
-              country: form.country,
-              address: form.address,
-              apartment: form.apartment,
-              city: form.city,
-            },
-          });
-          router.push("/");
+          setAlert(t("Done"));
+          if (!state.logedin) {
+            dispatch({
+              type: "register",
+              payload: {
+                first_name: form.first_name,
+                last_name: form.last_name,
+                phone: form.phone,
+                email: form.email,
+                password: form.password,
+                country: form.country,
+                address: form.address,
+                apartment: form.apartment,
+                city: form.city,
+              },
+            });
+          }
         }
       }}
     >
@@ -154,6 +155,19 @@ export default function FormCheckOut() {
       })}
 
       {error && <Alert type="error" message={error} />}
+      {alert && (
+        <div
+          onClick={() => {
+            setAlert(undefined);
+          }}
+          className="bg-black/50 fixed top-0 left-0 w-full h-full text-center flex justify-center items-center"
+        >
+          <div className="basis-[50%]">
+            {" "}
+            <Alert type="success" message={alert} />
+          </div>
+        </div>
+      )}
     </form>
   );
 }

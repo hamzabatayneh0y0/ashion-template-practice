@@ -297,5 +297,17 @@
   "Opna Women's Short Sleeve Moisture": "تيشيرت نسائي قصير الأكمام مقاوم للرطوبة من Opna",
   "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort": "100٪ بوليستر، يُغسل في الغسالة، مقاوم للرطوبة، قماش خفيف ومريح بياقة V، تصميم نسائي أنيق,",
   "DANVOUY Womens T Shirt Casual Cotton Short": "تيشيرت نسائي قطن كاجوال قصير من DANVOUY",
-  "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch,, Occasion: Casual/Office/Beach/School/Home/Street, Season: Spring,Summer,Autumn,Winter,": "95٪ قطن، 5٪ سباندكس, تيشيرت كاجوال بطباعة وحروف، بياقة V، ناعم ومرن، مناسب لكل المواسم والمناسبات,"
+  "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch,, Occasion: Casual/Office/Beach/School/Home/Street, Season: Spring,Summer,Autumn,Winter,": "95٪ قطن، 5٪ سباندكس, تيشيرت كاجوال بطباعة وحروف، بياقة V، ناعم ومرن، مناسب لكل المواسم والمناسبات,",
+
+  "paths": {
+    "ProductDetails": "تفاصيل المنتج",
+    "CheckOut": "إتمام الشراء",
+    "Blog": "المدونة",
+    "Home": "الرئيسية",
+    "shop": "المتجر",
+    "cart": "سلة التسوق",
+    "contact": "اتصل بنا",
+    "my-account": "حسابي",
+    "favorite": "المفضله"
+  }
 }

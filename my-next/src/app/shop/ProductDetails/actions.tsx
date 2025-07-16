@@ -101,7 +101,7 @@ export default function Actions({ id }: { id: number }) {
             }
           }, 50);
         }}
-        className={`bg-red-500 rounded-full cursor-pointer select-none py-2 px-6 flex items-center text-2xl w-fit`}
+        className={`bg-red-500 text-white rounded-full cursor-pointer select-none py-2 px-6 flex items-center text-2xl w-fit`}
       >
         <MdOutlineShoppingBag /> <span>{t("product.addToCart")}</span>
       </span>

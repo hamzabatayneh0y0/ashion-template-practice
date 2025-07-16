@@ -11,6 +11,7 @@ import Money from "@/components/mycomponents/currency/money";
 import { FaTrash } from "react-icons/fa";
 import Quantity from "./quantity";
 import { useTranslations } from "next-intl";
+import Title from "@/components/mycomponents/title/title";
 
 interface productType1 {
   category: string;
@@ -65,13 +66,14 @@ export default function Cart() {
 
   if (cartProducts.length === 0)
     return (
-      <h2 className="text-3xl flex justify-center items-center w-full h-full text-red-500 py-12">
+      <h2 className="text-3xl flex justify-center items-center w-full h-full text-red-500 py-12 ">
         <span>{t("nothingFound")}</span>
       </h2>
     );
 
   return (
-    <div className="cart container m-auto transition-all duration-300 py-12 overflow-x-scroll">
+    <div className="cart container m-auto transition-all duration-300 py-12 overflow-x-scroll px-3">
+      <Title />
       <table className="table-auto p-3 w-full">
         <tbody>
           <tr className="text-2xl border-b-2 border-gray-100">
@@ -91,7 +93,7 @@ export default function Cart() {
                   <Image
                     src={e.image}
                     alt="product image"
-                    loading="lazy"
+                    priority
                     width={200}
                     height={200}
                     style={{ width: "40%" }}

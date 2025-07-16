@@ -35,7 +35,7 @@ export default function Carousel({ img }: { img: string }) {
             <Image
               src={img}
               alt="product image"
-              loading="lazy"
+              priority={true}
               width={300}
               height={300}
               style={{ width: "100%", height: "auto" }}
@@ -45,7 +45,7 @@ export default function Carousel({ img }: { img: string }) {
             <Image
               src={img}
               alt="product image"
-              loading="lazy"
+              priority={true}
               width={300}
               height={300}
               style={{ width: "100%", height: "auto" }}
@@ -55,7 +55,7 @@ export default function Carousel({ img }: { img: string }) {
             <Image
               src={img}
               alt="product image"
-              loading="lazy"
+              priority={true}
               width={300}
               height={300}
               style={{ width: "100%", height: "auto" }}
@@ -64,11 +64,11 @@ export default function Carousel({ img }: { img: string }) {
         </CarouselContent>
         <CarouselPrevious
           style={{ backgroundColor: "black" }}
-          className="left-0 top-[80%] translate-y-[-50%]"
+          className="left-0 top-[80%] translate-y-[-50%] text-white hover:text-white"
         />
         <CarouselNext
           style={{ backgroundColor: "black" }}
-          className="right-0 top-[80%] translate-y-[-50%]"
+          className="right-0 top-[80%] translate-y-[-50%] text-white hover:text-white "
         />
       </UICarousel>
       <div className="flex justify-center gap-2 mt-4">

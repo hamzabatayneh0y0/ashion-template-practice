@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Loading from "../loading";
 import { ProductType } from "@/components/mycomponents/usercontext/Type";
 import { useTranslations } from "next-intl";
+import Title from "@/components/mycomponents/title/title";
 
 interface productType1 {
   category: string;
@@ -62,18 +63,22 @@ export default function Favorite() {
     );
 
   return (
-    <div className="favorite container m-auto items-start grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5 gap-5 transition-all duration-300 py-12">
-      {favoriteProducts.map((e: productType1) => {
-        return (
-          <ProductCard
-            key={e.id}
-            row={false}
-            product={e}
-            label="none"
-            beforesale={0}
-          />
-        );
-      })}
+    <div className="favorite container m-auto px-5 py-12">
+      <Title />
+
+      <div className="items-start grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5 gap-5 transition-all duration-300">
+        {favoriteProducts.map((e: productType1) => {
+          return (
+            <ProductCard
+              key={e.id}
+              row={false}
+              product={e}
+              label="none"
+              beforesale={0}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

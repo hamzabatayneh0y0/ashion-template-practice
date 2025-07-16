@@ -7,6 +7,7 @@ import Products from "./fetchproducts";
 import { useRouter, useSearchParams } from "next/navigation";
 import Loading from "@/components/mycomponents/loader/loading";
 import { useTranslations } from "next-intl";
+import Title from "@/components/mycomponents/title/title";
 
 export default function Shop() {
   const router = useRouter();
@@ -38,7 +39,8 @@ export default function Shop() {
   if (!price && !choosedCat) return <Loading />;
 
   return (
-    <div className="shop container m-auto flex flex-col gap-5 lg:flex-row py-12">
+    <div className="shop container m-auto flex flex-col gap-5 lg:flex-row py-12 px-3">
+      <Title />
       <div className="filter flex gap-5 max-sm:flex-col justify-between items-start lg:justify-start lg:flex-col lg:basis-[40%] p-2">
         <div className="categories basis-[40%] lg:w-full lg:basis-[fit-content] max-sm:w-full">
           <h2 className="text-2xl font-[--font-cookie]">

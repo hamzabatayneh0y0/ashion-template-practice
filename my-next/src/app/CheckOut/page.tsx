@@ -1,3 +1,4 @@
+import Title from "@/components/mycomponents/title/title";
 import Loading from "../loading";
 import FormCheckOut from "./form";
 import Order from "./orders";
@@ -28,9 +29,13 @@ export default async function CheckOut() {
   if (!products) return <Loading />;
 
   return (
-    <div className="checkout container m-auto md:flex gap-4 py-12 px-4">
-      <FormCheckOut />
-      <Order products={products} />
+    <div className="checkout container m-auto py-12 px-4">
+      <Title />
+
+      <div className="md:flex gap-4">
+        <FormCheckOut />
+        <Order products={products} />
+      </div>
     </div>
   );
 }

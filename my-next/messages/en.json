@@ -301,5 +301,17 @@
   "Opna Women's Short Sleeve Moisture": "Opna Women's Short Sleeve Moisture",
   "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort": "100% polyester, machine washable, moisture-wicking, soft and breathable V-neck shirt with slim feminine fit.",
   "DANVOUY Womens T Shirt Casual Cotton Short": "DANVOUY Womens T Shirt Casual Cotton Short",
-  "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch,, Occasion: Casual/Office/Beach/School/Home/Street, Season: Spring,Summer,Autumn,Winter,": "95% cotton, 5% spandex. Casual T-shirt with letter print and V-neck. Soft and stretchy, suitable for all seasons and occasions."
+  "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch,, Occasion: Casual/Office/Beach/School/Home/Street, Season: Spring,Summer,Autumn,Winter,": "95% cotton, 5% spandex. Casual T-shirt with letter print and V-neck. Soft and stretchy, suitable for all seasons and occasions.",
+
+  "paths": {
+    "ProductDetails": "Product-Details",
+    "CheckOut": "Check-Out",
+    "Blog": "Blog",
+    "Home": "Home",
+    "shop": "shop",
+    "cart": "cart",
+    "contact": "contact",
+    "my-account": "my-account",
+    "favorite": "favorite"
+  }
 }

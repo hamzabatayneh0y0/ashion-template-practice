@@ -10,6 +10,7 @@ import { useUser } from "@/components/mycomponents/usercontext/contextProvider";
 import { MdEdit, MdSave, MdVisibility, MdVisibilityOff } from "react-icons/md";
 import { useTheme } from "@/components/mycomponents/theme/theme";
 import Alert from "@/components/mycomponents/formAletrt/formAlert";
+import Title from "@/components/mycomponents/title/title";
 
 export default function MyAccount() {
   const { state, dispatch } = useUser();
@@ -23,11 +24,13 @@ export default function MyAccount() {
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({
     name: state.logedin ? state.first_name + " " + state.last_name : "",
-
     email: state.email,
     password: state.password,
     country: state.country,
     city: state.city,
+    address: state.address,
+    apartment: state.apartment,
+    phone: state.phone,
   });
 
   useEffect(() => {
@@ -37,6 +40,9 @@ export default function MyAccount() {
       password: state.password,
       country: state.country,
       city: state.city,
+      address: state.address,
+      apartment: state.apartment,
+      phone: state.phone,
     });
   }, [state]);
 
@@ -154,6 +160,7 @@ export default function MyAccount() {
 
   return (
     <div className="container m-auto px-3 py-12">
+      <Title />
       <div className="p-2 border-b-2 border-gray-200">
         <Image
           src={
@@ -259,6 +266,45 @@ export default function MyAccount() {
                   type="text"
                   name="city"
                   value={form.city}
+                  onChange={handleChange}
+                  readOnly={!editMode}
+                  className={`ml-2 p-1 rounded border-2 outline-0 ${
+                    editMode ? "border-gray-300" : "border-transparent"
+                  }`}
+                />
+              </div>
+              <div>
+                <label>{t("address")}:</label>
+                <input
+                  type="text"
+                  name="address"
+                  value={form.address}
+                  onChange={handleChange}
+                  readOnly={!editMode}
+                  className={`ml-2 p-1 rounded border-2 outline-0 ${
+                    editMode ? "border-gray-300" : "border-transparent"
+                  }`}
+                />
+              </div>
+              <div>
+                <label>{t("apartment")}:</label>
+                <input
+                  type="text"
+                  name="apartment"
+                  value={form.apartment}
+                  onChange={handleChange}
+                  readOnly={!editMode}
+                  className={`ml-2 p-1 rounded border-2 outline-0 ${
+                    editMode ? "border-gray-300" : "border-transparent"
+                  }`}
+                />
+              </div>
+              <div>
+                <label>{t("phone")}:</label>
+                <input
+                  type="text"
+                  name="phone"
+                  value={form.phone}
                   onChange={handleChange}
                   readOnly={!editMode}
                   className={`ml-2 p-1 rounded border-2 outline-0 ${

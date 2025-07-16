@@ -13,6 +13,7 @@ import blog9 from "../../images/blog-9.jpg";
 
 import { StaticImageData } from "next/image";
 import { useState } from "react";
+import Title from "@/components/mycomponents/title/title";
 
 interface bloginfo {
   src: StaticImageData;
@@ -112,6 +113,7 @@ export default function Blog() {
 
   return (
     <div className="blog py-12 container m-auto max-sm:my-4 flex flex-col">
+      <Title />
       <div
         className={`items columns-1 md:columns-2 lg:columns-3 overflow-hidden  ${
           load ? "max-h-[3000px]" : "max-h-[1300px] "

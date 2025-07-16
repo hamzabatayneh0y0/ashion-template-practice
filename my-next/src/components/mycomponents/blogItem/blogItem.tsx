@@ -13,9 +13,9 @@ export default function BlogItem({
 }) {
   return (
     <div className="blogitem m-3">
-      <Image src={src} alt="blogitemimage" loading="lazy" className="w-full" />
+      <Image src={src} alt="blogitemimage" priority className="w-full" />
       <div className="text bg-white w-4/5 p-4 -mt-20 relative">
-        <h2 className="font-[500] sm:text-2xl">{text}</h2>
+        <h2 className="font-[500] text-black sm:text-2xl">{text}</h2>
         <div className="info">
           <span className="text-gray-400">
             by <span className="text-gray-600">{auth}</span> |

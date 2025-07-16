@@ -5,6 +5,7 @@ import Rate from "@/components/mycomponents/rate/rate";
 import Money from "@/components/mycomponents/currency/money";
 import Actions from "./actions";
 import { getTranslations } from "next-intl/server";
+import Title from "@/components/mycomponents/title/title";
 
 interface productType {
   category: string;
@@ -56,7 +57,8 @@ export default async function ProductDetails({
   if (!product) return <Loading />;
 
   return (
-    <div className="productdetails ">
+    <div className="productdetails px-4">
+      <Title />
       <div className="container m-auto flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between py-12 transition-all duration-300">
         <div className="carousel lg:basis-[50%] p-5">
           <Carousel img={product.image} />

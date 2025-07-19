@@ -27,12 +27,19 @@ export default function CurrencyProvider({
   c: string;
   children: ReactNode;
 }) {
-  const [cur, setCur] = useState(localStorage.getItem("cur") || c);
+  const [cur, setCur] = useState(c);
   useEffect(() => {
     if (cur == "") return;
-    changeCur(cur);
-    localStorage.setItem("currency", cur);
-  }, [cur]);
+    const storedcur = localStorage.getItem("currency");
+    if (storedcur) {
+      changeCur(storedcur);
+      localStorage.setItem("currency", storedcur);
+      setCur(storedcur);
+    } else {
+      changeCur(c);
+      localStorage.setItem("currency", c);
+    }
+  }, []);
   return (
     <CurrencyContext.Provider value={{ cur, setCur }}>
       {children}

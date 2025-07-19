@@ -104,7 +104,7 @@ export default function Home() {
           loading="lazy"
           className="basis-full lg:basis-1/2 w-full"
         />
-        <div className="date basis-full lg:basis-1/2 text-center p-5 lg:p-12 bg-gray-200 z-0 relative before:absolute before:w-[35%] before:aspect-square before:bg-white before:top[50%] before:left[50%] before:translate-x-[-50%] before:-z-1 before:rounded-full">
+        <div className="date basis-full lg:basis-1/2 text-center p-5 lg:p-12 bg-gray-200 z-0 relative before:absolute before:w-[35%] before:aspect-square before:bg-white before:top[50%] before:left[50%] before:translate-[50%] before:-z-1 before:rounded-full">
           <p className="m-5">{t("discount")}</p>
           <h2 className={`font-[cookie,cursive] text-red-700 text-6xl m-5`}>
             {t("summer")} {year}

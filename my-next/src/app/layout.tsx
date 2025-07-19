@@ -74,13 +74,9 @@ export default async function RootLayout({
   const c: string = cur ? cur.value : "us";
   const theme: string = cookieTheme ? cookieTheme.value : "";
   const locale = await getLocale();
+
   return (
-    <html
-      lang={locale}
-      className={theme}
-      // data-theme={theme}
-      dir={locale == "en" ? "ltr" : "rtl"}
-    >
+    <html lang={locale} className={theme} dir={locale == "en" ? "ltr" : "rtl"}>
       <head>
         <link rel="icon" href="/logo.png" />
         <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />

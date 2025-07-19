@@ -1,4 +1,5 @@
 "use client";
+import changeCur from "@/functoins/changeCur";
 import {
   createContext,
   useState,
@@ -6,6 +7,7 @@ import {
   Dispatch,
   SetStateAction,
   useContext,
+  useEffect,
 } from "react";
 
 interface CurrencyContextType {
@@ -25,8 +27,12 @@ export default function CurrencyProvider({
   c: string;
   children: ReactNode;
 }) {
-  const [cur, setCur] = useState(c);
-
+  const [cur, setCur] = useState(localStorage.getItem("cur") || c);
+  useEffect(() => {
+    if (cur == "") return;
+    changeCur(cur);
+    localStorage.setItem("currency", cur);
+  }, [cur]);
   return (
     <CurrencyContext.Provider value={{ cur, setCur }}>
       {children}

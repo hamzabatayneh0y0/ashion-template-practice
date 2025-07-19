@@ -1,5 +1,6 @@
 "use client";
 import Loading from "@/app/loading";
+import changeLang from "@/functoins/changeLang";
 import changeTheme from "@/functoins/changTheme";
 
 import {
@@ -19,6 +20,7 @@ export const ThemeContext = createContext<{
 
 export default function Theme({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState("");
+
   useEffect(() => {
     const c: string | null = localStorage.getItem("theme");
     if (!c) {
@@ -69,6 +71,20 @@ export default function Theme({ children }: { children: ReactNode }) {
       }
     }
   }, []);
+
+  useEffect(() => {
+    const storedlang = localStorage.getItem("lang");
+    if (!storedlang) {
+      changeLang("en");
+    } else {
+      changeLang(storedlang);
+      localStorage.setItem("lang", storedlang);
+
+      document.documentElement.classList.remove("ar", "en");
+      document.documentElement.classList.add(storedlang);
+    }
+  }, []);
+
   if (theme === "") return <Loading />;
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

@@ -98,16 +98,19 @@ export default async function Home() {
           loading="lazy"
           className="basis-full lg:basis-1/2 w-full"
         />
-        <div className="date basis-full lg:basis-1/2 text-center p-5 lg:p-12 bg-gray-200 z-0 relative before:absolute before:w-[35%] before:aspect-square before:bg-white before:top[50%] before:left[50%] before:translate-x-[-50%] before:-z-1 before:rounded-full">
+        <div className="date basis-full lg:basis-1/2 text-center p-5 lg:p-12 bg-gray-200 z-0 relative before:absolute before:w-[35%] before:aspect-square before:bg-white before:top[50%] before:left[50%] ltr:before:translate-x-[-50%] rtl:before:translate-x-[50%] before:-z-1 before:rounded-full">
           <p className="m-5">{t("discount")}</p>
           <h2 className={`font-[cookie,cursive] text-red-700 text-6xl m-5`}>
             {t("summer")} {year}
           </h2>
-          <p className="m-5 uppercase">
+          <p className="m-5 uppercase text-black">
             {t("sale")}
             <span className="text-red-700 mx-3 font-bold text-2xl"> 50%</span>
           </p>
-          <p className="m-8 flex justify-between items-center flex-wrap text-black">
+          <p
+            dir="ltr"
+            className="m-8 flex justify-between items-center flex-wrap text-black"
+          >
             <HomeTimmer />
           </p>
           <Link

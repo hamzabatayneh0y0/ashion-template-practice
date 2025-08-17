@@ -309,5 +309,10 @@
     "contact": "اتصل بنا",
     "my-account": "حسابي",
     "favorite": "المفضله"
-  }
+  },
+
+  "loged in successfully": "تم تسجيل الدخول بنجاح",
+
+  "User already exist": "المستخدم موجود بالفعل",
+  "somthing went wrong": "حدث خطأ ما"
 }

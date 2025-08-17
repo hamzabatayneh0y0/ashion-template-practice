@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useZoom } from "../zoom/zoomProvider";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+
 interface productType {
   category: string;
   description: string;
@@ -43,7 +44,6 @@ export default function ProductCard({
     setfav(
       state.products?.some((e) => e.productId === product?.id && e.favorite)
     );
-
     setcart(state.products?.some((e) => e.productId === product?.id && e.cart));
   }, [state.products, product?.id]);
 
@@ -136,7 +136,9 @@ export default function ProductCard({
             }  gap-5`}
           >
             <h3 className="font-[500]">
-              {t(`${product.title.replace(/\./g, ",")}`)}
+              {t.has(`${product.title.replace(/\./g, ",")}`)
+                ? t(`${product.title.replace(/\./g, ",")}`)
+                : product.title.replace(/\./g, ",")}
             </h3>
             <Rate rate={product.rating.rate} />
             <p className="">

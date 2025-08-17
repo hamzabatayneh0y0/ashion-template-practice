@@ -11,6 +11,7 @@ import { MdEdit, MdSave, MdVisibility, MdVisibilityOff } from "react-icons/md";
 import { useTheme } from "@/components/mycomponents/theme/theme";
 import Alert from "@/components/mycomponents/formAletrt/formAlert";
 import Title from "@/components/mycomponents/title/title";
+import { updateValidation } from "@/functoins/validation";
 
 export default function MyAccount() {
   const { state, dispatch } = useUser();
@@ -19,11 +20,12 @@ export default function MyAccount() {
   const [lang, setLang] = useState<string>("");
   const { cur, setCur } = useCur();
   const t = useTranslations();
-
+  const [error, setError] = useState<string | undefined>(undefined);
   const [editMode, setEditMode] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({
-    name: state.logedin ? state.first_name + " " + state.last_name : "",
+    first_name: state.first_name,
+    last_name: state.last_name,
     email: state.email,
     password: state.password,
     country: state.country,
@@ -35,7 +37,8 @@ export default function MyAccount() {
 
   useEffect(() => {
     setForm({
-      name: state.logedin ? state.first_name + " " + state.last_name : "",
+      first_name: state.first_name,
+      last_name: state.last_name,
       email: state.email,
       password: state.password,
       country: state.country,
@@ -51,19 +54,27 @@ export default function MyAccount() {
   }
 
   function handleSave() {
-    dispatch({
-      type: "updateInfo",
-      payload: {
-        first_name: form.name?.split(" ")[0],
-        last_name: form.name?.split(" ")[form.name.split(" ").length - 1],
-        email: form.email,
-        password: form.password,
-
-        country: form.country,
-        city: form.city,
-      },
-    });
-    setEditMode(false);
+    const validation = updateValidation(t).safeParse(form);
+    if (!validation.success) {
+      setError(validation.error.issues[0].message);
+    } else {
+      dispatch({
+        type: "updateInfo",
+        payload: {
+          first_name: form.first_name,
+          last_name: form.last_name,
+          email: form.email,
+          password: form.password,
+          country: form.country,
+          city: form.city,
+          address: form.address,
+          apartment: form.apartment,
+          phone: form.phone,
+        },
+      });
+      setEditMode(false);
+      setError(undefined);
+    }
   }
   function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -199,11 +210,24 @@ export default function MyAccount() {
 
             <div className="space-y-4 text-2xl">
               <div className="flex flex-wrap gap-2 ">
-                <label>{t("name")}:</label>
+                <label>{t("first_name")}:</label>
                 <input
                   type="text"
                   name="name"
-                  value={form.name}
+                  value={form.first_name}
+                  onChange={handleChange}
+                  readOnly={!editMode}
+                  className={` p-1 rounded border-2 outline-0 ${
+                    editMode ? "border-gray-300" : "border-transparent"
+                  }`}
+                />
+              </div>
+              <div className="flex flex-wrap gap-2 ">
+                <label>{t("last_name")}:</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.last_name}
                   onChange={handleChange}
                   readOnly={!editMode}
                   className={` p-1 rounded border-2 outline-0 ${
@@ -239,6 +263,7 @@ export default function MyAccount() {
                   }`}
                 />
                 <button
+                  data-testid="visibility"
                   onClick={() => setShowPassword((prev) => !prev)}
                   className="text-xl"
                 >
@@ -312,6 +337,8 @@ export default function MyAccount() {
                   }`}
                 />
               </div>
+
+              {error && <Alert type="error" message={error} />}
             </div>
 
             {/* الأزرار */}
@@ -344,6 +371,7 @@ export default function MyAccount() {
         <p className="flex justify-between">
           <span className="text-2xl">{t("theme")}: </span>
           <select
+            data-testid="themeSelect"
             className="dark:bg-gray-950 outline-0 py-1 px-5  rounded-sm border-2 cursor-pointer"
             value={theme}
             id="theme"

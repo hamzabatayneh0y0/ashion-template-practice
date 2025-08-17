@@ -57,6 +57,7 @@ export default function FormCheckOut() {
   }
   return (
     <form
+      role="form"
       id="my-form"
       className="md:basis-[60%]"
       onSubmit={(e) => {
@@ -103,7 +104,7 @@ export default function FormCheckOut() {
       {Object.entries(form).map(([key, val]) => {
         if (key === "account" && state.logedin) return null;
         return (
-          <label key={key} className="text-2xl my-5 block">
+          <label key={key} htmlFor={key} className="text-2xl my-5 block">
             {key !== "account" && key !== "note" ? (
               <p className="mb-2 font-[--font-cookie] capitalize">
                 {key === "coupon" ? t("coupon") : t(key)}
@@ -118,6 +119,7 @@ export default function FormCheckOut() {
               </p>
             ) : null}
             <input
+              id={key}
               required={
                 key !== "apartment" &&
                 key !== "order_notes" &&

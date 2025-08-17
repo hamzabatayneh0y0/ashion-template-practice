@@ -178,7 +178,7 @@
 
   "home": {
     "womenTitle": "Women’s fashion",
-    "womenDisc": "Sitamet, consectetur adipiscing elit&middot;&middot;&middot;",
+    "womenDisc": "Sitamet, consectetur adipiscing elit...",
     "menTitle": "Men’s fashion",
     "menDisc": "358 items",
     "kidTitle": "Kid’s fashion",
@@ -313,5 +313,10 @@
     "contact": "contact",
     "my-account": "my-account",
     "favorite": "favorite"
-  }
+  },
+
+  "loged in successfully": "loged in successfully",
+
+  "User already exist": "User already exist",
+  "somthing went wrong": "somthing went wrong"
 }

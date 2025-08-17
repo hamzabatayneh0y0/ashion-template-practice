@@ -8,10 +8,11 @@ import Image from "next/image";
 import Rate from "@/components/mycomponents/rate/rate";
 import Link from "next/link";
 import Money from "@/components/mycomponents/currency/money";
-import { FaTrash } from "react-icons/fa";
+
 import Quantity from "./quantity";
 import { useTranslations } from "next-intl";
 import Title from "@/components/mycomponents/title/title";
+import { FaTrashCan } from "react-icons/fa6";
 
 interface productType1 {
   category: string;
@@ -117,7 +118,8 @@ export default function Cart() {
                   id={e.id}
                 />
                 <td className="p-3">
-                  <FaTrash
+                  <FaTrashCan
+                    data-testid={`trash-${e.id}`}
                     className="hover:text-red-500 cursor-pointer"
                     onClick={() => {
                       handleTrash(e.id);

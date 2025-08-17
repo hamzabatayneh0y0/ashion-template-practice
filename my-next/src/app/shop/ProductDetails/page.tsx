@@ -66,7 +66,9 @@ export default async function ProductDetails({
 
         <div className="info p-5 flex flex-col gap-5 lg:mx-12 transition-all duration-300 lg:basis-[50%]">
           <h2 className="font-[500] text-3xl">
-            {t(`${product.title.replace(/\./g, ",")}`)}
+            {t.has(`${product.title.replace(/\./g, ",")}`)
+              ? t(`${product.title.replace(/\./g, ",")}`)
+              : `${product.title.replace(/\./g, ",")}`}
           </h2>
           <Rate rate={product.rating.rate} />
 
@@ -85,7 +87,11 @@ export default async function ProductDetails({
             </span>
           </p>
 
-          <p>{t(`${product.description.replace(/\./g, ",")}`)}</p>
+          <p>
+            {t.has(`${product.description.replace(/\./g, ",")}`)
+              ? t(`${product.description.replace(/\./g, ",")}`)
+              : `${product.description.replace(/\./g, ",")}`}
+          </p>
           <Actions id={product.id} />
         </div>
       </div>

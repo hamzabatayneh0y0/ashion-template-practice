@@ -89,7 +89,7 @@ export default function Actions({ id }: { id: number }) {
             payload: { id, size: s, color: c, quantity: q },
           });
 
-          setTimeout(() => {
+          requestAnimationFrame(() => {
             if (toast.current) {
               toast.current.style.transitionDuration = "300ms";
 
@@ -99,7 +99,7 @@ export default function Actions({ id }: { id: number }) {
                   toast.current.style.transform = "translateX(-100%)";
               }, 1000);
             }
-          }, 50);
+          });
         }}
         className={`bg-red-500 text-white rounded-full cursor-pointer select-none py-2 px-6 flex items-center text-2xl w-fit`}
       >
@@ -108,6 +108,7 @@ export default function Actions({ id }: { id: number }) {
 
       <span>
         <GoHeart
+          role="img"
           onClick={() =>
             dispatch({
               type: "favorite",
@@ -138,6 +139,7 @@ export default function Actions({ id }: { id: number }) {
         {t("product.colors")}:
         {["red", "black", "blue"].map((color) => (
           <span
+            data-testid={`color-${color}`}
             key={color}
             data-color={color}
             onClick={handleColor}

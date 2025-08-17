@@ -19,12 +19,12 @@ export default function Shop() {
     "men's clothing",
     "women's clothing",
   ];
-  const [choosedCat, setChoosedCat] = useState<string>();
-  const [price, setPrice] = useState<number>();
-  useEffect(() => {
-    setChoosedCat(fromSearch.get("cat") || "all");
-    setPrice(parseInt(fromSearch.get("price") || "100"));
-  }, [fromSearch]);
+  const [choosedCat, setChoosedCat] = useState<string>(
+    fromSearch.get("cat") || "all"
+  );
+  const [price, setPrice] = useState<number>(
+    parseInt(fromSearch.get("price") || "100")
+  );
 
   useEffect(() => {
     setChoosedCat(fromSearch.get("cat") || "all");
@@ -77,6 +77,7 @@ export default function Shop() {
               defaultValue={[price || 100]}
               max={100}
               step={1}
+              value={[price || 100]}
               onValueChange={([val]) => setPrice(val)}
             />
             <div dir="ltr" className="flex justify-between">

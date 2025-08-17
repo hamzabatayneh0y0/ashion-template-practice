@@ -24,6 +24,7 @@ export default function Contact() {
     const { name, value } = e.target;
     setContactForm({ ...contactForm, [name]: value });
   }
+
   return (
     <div className="contact container m-auto py-12  p-5">
       <Title />
@@ -58,9 +59,11 @@ export default function Contact() {
           </div>
           <h2 className="text-3xl font-[500] mt-8 mb-5">{t("send_message")}</h2>
           <form
+            role="form"
             className="flex flex-col gap-5"
             onSubmit={(e) => {
               e.preventDefault();
+              setContactForm({ name: "", email: "", website: "", message: "" });
             }}
           >
             <input
@@ -69,14 +72,18 @@ export default function Contact() {
               id="name-message"
               autoComplete="true"
               placeholder={t("name")}
+              value={contactForm.name}
               onChange={handleChang}
+              required
               className="border-2 border-gray-300 w-full p-3 rounded-sm inset-shadow-sm/10 focus:outline-none"
             />
             <input
               type="email"
               autoComplete="true"
               id="email-message"
+              required
               name="email"
+              value={contactForm.email}
               placeholder={t("email")}
               onChange={handleChang}
               className="border-2 border-gray-300 w-full p-3 rounded-sm inset-shadow-sm/10 focus:outline-none"
@@ -84,8 +91,10 @@ export default function Contact() {
             <input
               type="text"
               name="website"
+              required
               autoComplete="true"
               id="website-message"
+              value={contactForm.website}
               placeholder={t("website")}
               onChange={handleChang}
               className="border-2 border-gray-300 w-full p-3 rounded-sm inset-shadow-sm/10 focus:outline-none"
@@ -93,7 +102,12 @@ export default function Contact() {
             <textarea
               name="message"
               id="contactMessage"
+              required
               placeholder={t("message")}
+              value={contactForm.message}
+              onChange={(e) => {
+                setContactForm({ ...contactForm, message: e.target.value });
+              }}
               className="border-2 border-gray-300 w-full p-3 rounded-sm inset-shadow-sm/10 focus:outline-none"
             ></textarea>
             <input

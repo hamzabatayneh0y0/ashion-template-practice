@@ -33,7 +33,6 @@ export default function Theme({ children }: { children: ReactNode }) {
         document.documentElement.classList.add("dark");
       } else {
         changeTheme("light");
-
         document.documentElement.classList.add("light");
       }
     } else {

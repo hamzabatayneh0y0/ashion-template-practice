@@ -6,7 +6,7 @@ export default function Alert({
   message,
 }: {
   type: "error" | "success";
-  message: string;
+  message: string | undefined;
 }) {
   const theme = {
     error: "bg-red-100 text-red-900 border-red-200",

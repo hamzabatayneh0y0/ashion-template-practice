@@ -5,16 +5,13 @@ import { FaMoneyBill1 } from "react-icons/fa6";
 import { IoIosSettings } from "react-icons/io";
 import { MdOutlinePayment } from "react-icons/md";
 import blog4 from "../images/blog-4.jpg";
-
 import Link from "next/link";
 import HomeCategory from "@/components/mycomponents/homeCategory/homeCategory";
 import NewProduct from "@/components/mycomponents/newProduct/newProduct";
 import HomeTimmer from "@/components/mycomponents/homeTimmer/homeTimmer";
-import { Suspense } from "react";
 import Trend from "@/components/mycomponents/trend/trend";
-import Loading from "./loading";
 import Collection from "@/components/mycomponents/collection/collection";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 type categorydata = {
   classname: string;
@@ -23,8 +20,8 @@ type categorydata = {
   cat: string;
 };
 
-export default function Home() {
-  const t = useTranslations("home");
+export default async function Home() {
+  const t = await getTranslations("home");
   const year = new Date().getFullYear();
 
   const data: categorydata[] = [
@@ -92,10 +89,7 @@ export default function Home() {
       <NewProduct />
 
       <Collection />
-
-      <Suspense fallback={<Loading />}>
-        <Trend />
-      </Suspense>
+      <Trend />
 
       <div className="discount container m-auto py-12 flex flex-col lg:flex-row">
         <Image

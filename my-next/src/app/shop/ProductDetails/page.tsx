@@ -55,7 +55,7 @@ export default async function ProductDetails({
     console.log(erorr);
   }
   if (!product) return <Loading />;
-
+  const productId = product.id;
   return (
     <div className="productdetails px-4">
       <Title />
@@ -103,7 +103,7 @@ export default async function ProductDetails({
         <div className="sugestions grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5 gap-5 transition-all duration-300">
           {sugestions &&
             sugestions
-              .filter((e) => e.id !== product.id)
+              .filter((e) => e.id !== productId)
               .map((e: productType) => (
                 <ProductCard
                   key={e.id}

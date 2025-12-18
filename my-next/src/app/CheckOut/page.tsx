@@ -25,6 +25,7 @@ export default async function CheckOut() {
     products =data;
   } catch (erorr) {
     console.log(erorr);
+    throw error;
   }
   
   //if (!products) return <Loading />;

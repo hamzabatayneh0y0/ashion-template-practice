@@ -26,7 +26,7 @@ export default async function CheckOut() {
   } catch (erorr) {
     console.log(erorr);
   }
- // if (!products) return <Loading />;
+  if (!products) return <Loading />;
 
   return (
     <div className="checkout container m-auto py-12 px-4">

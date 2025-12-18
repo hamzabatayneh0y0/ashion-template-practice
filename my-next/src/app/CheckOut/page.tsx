@@ -15,18 +15,19 @@ interface productType {
   title: string;
 }
 export default async function CheckOut() {
-  let products: productType[] | null = null;
+  let products: productType[] ;
   try {
     const F = await fetch(`https://fakestoreapi.com/products`, {});
     if (!F.ok) {
       throw "fetch error";
     }
     const data = await F.json();
-    products = data;
+    products =data;
   } catch (erorr) {
     console.log(erorr);
   }
-  if (!products) return <Loading />;
+  
+  //if (!products) return <Loading />;
 
   return (
     <div className="checkout container m-auto py-12 px-4">

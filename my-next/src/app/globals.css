@@ -8,8 +8,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant ar (&:where(.ar, .ar *));
 
-.font-arabic {
-  font-family: var(--font-arabic);
+.font-myFont {
+  font-family: var(--font-myFont);
 }
 html {
   scroll-behavior: smooth;

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import { Cookie } from "next/font/google";
 import "./globals.css";
 import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
@@ -24,16 +24,6 @@ const arabicFont = IBM_Plex_Sans_Arabic({
   subsets: ["arabic", "latin"],
   variable: "--font-myFont",
   weight: ["100", "200", "300", "400", "500", "600", "700"],
-});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -82,7 +72,7 @@ export default async function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${arabicFont.variable} antialiased dark:bg-gray-900 dark:text-white`}
+        className={`${arabicFont.className} font-myfont antialiased dark:bg-gray-900 dark:text-white`}
       >
         <Theme>
           <UserProvider>

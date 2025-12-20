@@ -1,5 +1,5 @@
 import Title from "@/components/mycomponents/title/title";
-import Loading from "../loading";
+// import Loading from "../loading";
 import FormCheckOut from "./form";
 import Order from "./orders";
 interface productType {
@@ -15,19 +15,19 @@ interface productType {
   title: string;
 }
 export default async function CheckOut() {
-  let products: productType[] ;
+  let products: productType[];
   try {
     const F = await fetch(`https://fakestoreapi.com/products`, {});
     if (!F.ok) {
       throw "fetch error";
     }
     const data = await F.json();
-    products =data;
+    products = data;
   } catch (erorr) {
     console.log(erorr);
     throw erorr;
   }
-  
+
   //if (!products) return <Loading />;
 
   return (

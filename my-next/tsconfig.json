@@ -41,7 +41,8 @@
     "next.config.js",
     "src/app/register",
     "src/components/mycomponents/blogItem",
-    "jest.config.ts"
+    "jest.config.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

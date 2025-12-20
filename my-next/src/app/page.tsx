@@ -1,3 +1,4 @@
+"use server";
 import HomeFeature from "@/components/mycomponents/homeFeatures/homeFeatures";
 import Image from "next/image";
 import { FaCar } from "react-icons/fa";
@@ -12,6 +13,8 @@ import HomeTimmer from "@/components/mycomponents/homeTimmer/homeTimmer";
 import Trend from "@/components/mycomponents/trend/trend";
 import Collection from "@/components/mycomponents/collection/collection";
 import { getTranslations } from "next-intl/server";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 type categorydata = {
   classname: string;
@@ -89,7 +92,9 @@ export default async function Home() {
       <NewProduct />
 
       <Collection />
-      <Trend />
+      <Suspense fallback={<Loading />}>
+        <Trend />
+      </Suspense>
 
       <div className="discount container m-auto py-12 flex flex-col lg:flex-row">
         <Image

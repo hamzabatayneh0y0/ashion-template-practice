@@ -72,6 +72,7 @@ export default function ProductCard({
   }
 
   if (!product) return null;
+
   return (
     <>
       <div

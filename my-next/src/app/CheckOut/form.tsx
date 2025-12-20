@@ -46,9 +46,15 @@ export default function FormCheckOut() {
         order_notes: "",
         coupon: "",
       });
-  }, [state]);
+  }, [state.logedin]);
   const [error, setError] = useState<string | undefined>(undefined);
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
   function handleChang(e: ChangeEvent<HTMLInputElement>) {
     const { name, value, checked } = e.target as HTMLInputElement;
     if (name === "account" || name === "note") {

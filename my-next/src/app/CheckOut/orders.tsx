@@ -2,7 +2,7 @@
 
 import Money from "@/components/mycomponents/currency/money";
 import { useUser } from "@/components/mycomponents/usercontext/contextProvider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
 interface productType {
@@ -27,7 +27,13 @@ export default function Order({ products }: { products: productType[] }) {
     state.products?.some((p) => p.productId === e.id && p.cart)
   );
   let tSum: number = 0;
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
   return (
     <ul className="bg-gray-200 dark:bg-black container m-auto flex flex-col gap-3 p-5 my-5 rounded-md h-fit md:basis-[40%]">
       <li className="text-2xl font-bold pb-2 border-b-2 border-gray-400">

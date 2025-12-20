@@ -79,7 +79,6 @@ export default async function RootLayout({
     <html lang={locale} className={theme} dir={locale == "en" ? "ltr" : "rtl"}>
       <head>
         <link rel="icon" href="/logo.png" />
-        <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body

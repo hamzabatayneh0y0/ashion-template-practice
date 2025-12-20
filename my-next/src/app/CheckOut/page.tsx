@@ -27,7 +27,7 @@ export default async function CheckOut() {
       next: { revalidate: 3600 },
     });
     if (!F.ok) {
-      throw "fetch error";
+      throw `fetch error ${F.status}`;
     }
     const data = await F.json();
     products = data;

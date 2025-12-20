@@ -17,7 +17,7 @@ interface productType {
 export default async function CheckOut() {
   let products: productType[];
   try {
-    const F = await fetch(`https://fakestoreapi.com/products`, {
+    const F = await fetch(`https://api.escuelajs.co/api/v1/products`, {
       method: "GET",
       headers: {
         "User-Agent":

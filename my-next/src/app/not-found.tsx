@@ -1,5 +1,6 @@
+import "./found.module.css";
+
 import { useTranslations } from "next-intl";
-import "./found.css";
 export default function NotFound() {
   const t = useTranslations();
   return (

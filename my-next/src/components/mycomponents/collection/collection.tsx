@@ -32,8 +32,9 @@ export default function Collection() {
     <div
       className={`cllection flex py-12 px-3 justify-center bg-[url(../images/banner-1.jpg)] bg-no-repeat bg-cover bg-center`}
     >
-      <div className="slider w-fit text-center text-black">
+      <div className="slider text-center text-black overflow-hidden ">
         <Carousel
+          className="w-fit "
           dir="ltr"
           setApi={setApi}
           opts={{
@@ -47,21 +48,23 @@ export default function Collection() {
             }),
           ]}
         >
-          <CarouselContent>
+          <CarouselContent className="">
             {[1, 2, 3].map((_, i) => (
-              <CarouselItem className="w-full" key={i}>
-                <p className="sm:text-2xl text-red-500">
-                  {t("chloeCollection")}
-                </p>
-                <h1 className="font-[cookie,cursive] text-4xl sm:text-6xl my-3">
-                  {t("projectJacket")}
-                </h1>
-                <Link
-                  className="mt-5 font-bold border-b-3 p-2 border-red-700 block w-fit m-auto"
-                  href={"/shop"}
-                >
-                  {t("shopNow")}
-                </Link>
+              <CarouselItem className="flex justify-center" key={i}>
+                <div className="max-w-fit">
+                  <p className="sm:text-2xl text-red-500">
+                    {t("chloeCollection")}
+                  </p>
+                  <h1 className="font-[cookie,cursive] text-4xl sm:text-6xl my-3">
+                    {t("projectJacket")}
+                  </h1>
+                  <Link
+                    className="mt-5 font-bold border-b-3 p-2 border-red-700 block w-fit m-auto"
+                    href={"/shop"}
+                  >
+                    {t("shopNow")}
+                  </Link>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
-import { Cookie } from "next/font/google";
+// import { Cookie } from "next/font/google";
 import "./globals.css";
+
 import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import { getLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
@@ -15,11 +16,11 @@ import ZoomProvider from "@/components/mycomponents/zoom/zoomProvider";
 import Zoom from "@/components/mycomponents/zoom/zoom";
 import Theme from "@/components/mycomponents/theme/theme";
 
-export const font = Cookie({
-  variable: "--font-cookie-sans",
-  subsets: ["latin"],
-  weight: ["400"],
-});
+// export const font = Cookie({
+//   variable: "--font-cookie-sans",
+//   subsets: ["latin"],
+//   weight: ["400"],
+// });
 const arabicFont = IBM_Plex_Sans_Arabic({
   subsets: ["arabic", "latin"],
   variable: "--font-myFont",

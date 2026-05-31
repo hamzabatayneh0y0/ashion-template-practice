@@ -17,7 +17,7 @@
 
   "Copyright \u00a9 2025 All rights reserved | This template is made with by Colorlib": "Copyright \u00a9 2025 All rights reserved | This template is made with by Colorlib",
 
-  "footerdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt cilisis&middot;",
+  "footerdescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt cilisis.",
 
   "Home": "Home",
   "Shop": "Shop",
@@ -35,8 +35,8 @@
   "system": "system",
 
   "blog": {
-    "noBadBlood": "No Bad Blood! The Reason Why Tamr Judge Finally Made Up With&middot;&middot;&middot;",
-    "amfCannes": "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela&middot;&middot;&middot;",
+    "noBadBlood": "No Bad Blood! The Reason Why Tamr Judge Finally Made Up With...",
+    "amfCannes": "Amf Cannes Red Carpet Celebrities Kendall Jenner, Pamela...",
     "loadMore": "Load more posts",
     "loadLess": "Load less posts"
   },
@@ -48,7 +48,7 @@
     "price": "Price",
     "quantity": "Quantity",
     "total": "Total",
-    "nothingFound": "Nothing Found&middot;&middot;&middot;"
+    "nothingFound": "Nothing Found"
   },
 
   "checkoutform": {
@@ -57,7 +57,7 @@
     "last_name": "Last Name",
     "country": "Country",
     "address": "Address",
-    "apartment": "Apartment, suite, etc&middot; (optional)",
+    "apartment": "Apartment, suite, etc... (optional)",
     "city": "City",
     "postcode": "Postcode / ZIP",
     "phone": "Phone",
@@ -65,9 +65,9 @@
     "account": "Create an account?",
     "password": "Password",
     "show_password": "Show password",
-    "note": "Note about your order, e&middot;g&middot;, special note for delivery",
+    "note": "Note about your order, e.g..., special note for delivery",
     "order_notes": "Order Notes",
-    "coupon": "Have a coupon? Click here to enter your code&middot;",
+    "coupon": "Have a coupon? Click here to enter your code.",
     "password_mismatch": "Passwords do not match",
     "Done": "Done",
     "invalid_email": "Invalid email address",
@@ -104,7 +104,7 @@
   },
 
   "favorite": {
-    "nothing_found": "Nothing Found&middot;&middot;&middot;"
+    "nothing_found": "Nothing Found..."
   },
 
   "login": {
@@ -162,7 +162,7 @@
 
   "relatedProducts": "Related Products",
   "fetchproducts": {
-    "notFound": "Sorry, we didn't find what you're looking for&middot;"
+    "notFound": "Sorry, we didn't find what you're looking for."
   },
 
   "shop": {

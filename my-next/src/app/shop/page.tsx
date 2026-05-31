@@ -20,10 +20,10 @@ export default function Shop() {
     "women's clothing",
   ];
   const [choosedCat, setChoosedCat] = useState<string>(
-    fromSearch.get("cat") || "all"
+    fromSearch.get("cat") || "all",
   );
   const [price, setPrice] = useState<number>(
-    parseInt(fromSearch.get("price") || "100")
+    parseInt(fromSearch.get("price") || "100"),
   );
 
   useEffect(() => {
@@ -39,60 +39,67 @@ export default function Shop() {
   if (!price && !choosedCat) return <Loading />;
 
   return (
-    <div className="shop container m-auto flex flex-col gap-5 lg:flex-row py-12 px-3">
+    <div className="shop container m-autopy-12 px-3">
       <Title />
-      <div className="filter flex gap-5 max-sm:flex-col justify-between items-start lg:justify-start lg:flex-col lg:basis-[40%] p-2">
-        <div className="categories basis-[40%] lg:w-full lg:basis-[fit-content] max-sm:w-full">
-          <h2 className="text-2xl font-[--font-cookie]">
-            <span className="border-b-2 border-red-500">{t("categories")}</span>
-          </h2>
-          <ul>
-            {cat.map((e, i) => {
-              return (
-                <li key={i} className="font-[500] border-b-2 border-gray-200 ">
-                  <label className="flex gap-2 p-3 cursor-pointer">
-                    <input
-                      className="p-2"
-                      type="checkbox"
-                      checked={e === choosedCat}
-                      onChange={(e) => {
-                        setChoosedCat(e.target.value);
-                      }}
-                      value={e}
-                    />
-                    {t(e)}
-                  </label>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="price flex flex-col gap-2 basis-[40%] lg:w-full p-2 max-sm:w-full">
-          <h2 className="text-2xl font-[--font-cookie]">
-            <span className="border-b-2 border-red-500">{t("shop")}</span>{" "}
-            {t("byPrice")}
-          </h2>
-          <div className="slider">
-            <Slider
-              defaultValue={[price || 100]}
-              max={100}
-              step={1}
-              value={[price || 100]}
-              onValueChange={([val]) => setPrice(val)}
-            />
-            <div dir="ltr" className="flex justify-between">
-              <span>
-                <Money m={0} />
+      <div className=" flex flex-col gap-5 lg:flex-row ">
+        <div className="filter flex gap-5 max-sm:flex-col justify-between items-start lg:justify-start lg:flex-col lg:basis-[40%] p-2">
+          <div className="categories basis-[40%] lg:w-full lg:basis-[fit-content] max-sm:w-full">
+            <h2 className="text-2xl font-[--font-cookie]">
+              <span className="border-b-2 border-red-500">
+                {t("categories")}
               </span>
-              <span>
-                <Money m={price || 100} />
-              </span>
+            </h2>
+            <ul>
+              {cat.map((e, i) => {
+                return (
+                  <li
+                    key={i}
+                    className="font-[500] border-b-2 border-gray-200 "
+                  >
+                    <label className="flex gap-2 p-3 cursor-pointer">
+                      <input
+                        className="p-2"
+                        type="checkbox"
+                        checked={e === choosedCat}
+                        onChange={(e) => {
+                          setChoosedCat(e.target.value);
+                        }}
+                        value={e}
+                      />
+                      {t(e)}
+                    </label>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="price flex flex-col gap-2 basis-[40%] lg:w-full p-2 max-sm:w-full">
+            <h2 className="text-2xl font-[--font-cookie]">
+              <span className="border-b-2 border-red-500">{t("shop")}</span>{" "}
+              {t("byPrice")}
+            </h2>
+            <div className="slider">
+              <Slider
+                defaultValue={[price || 100]}
+                max={100}
+                step={1}
+                value={[price || 100]}
+                onValueChange={([val]) => setPrice(val)}
+              />
+              <div dir="ltr" className="flex justify-between">
+                <span>
+                  <Money m={0} />
+                </span>
+                <span>
+                  <Money m={price || 100} />
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="lg:basis[60%]">
-        <Products cat={choosedCat || "all"} price={price || 100} />
+        <div className="lg:basis[60%]">
+          <Products cat={choosedCat || "all"} price={price || 100} />
+        </div>
       </div>
     </div>
   );

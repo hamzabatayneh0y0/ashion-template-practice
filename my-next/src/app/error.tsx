@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Error() {
   return (
-    <div className="error my-4">
+    <div className="error my-4 py-12 px-5">
       <p className="text-3xl font-sans">ERROR...</p>
 
       <br />

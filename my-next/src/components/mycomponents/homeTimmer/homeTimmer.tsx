@@ -5,8 +5,11 @@ import { useEffect, useState } from "react";
 
 export default function HomeTimmer() {
   const [timer, setTimer] = useState<number[]>([]);
-  const l = moment().add(1, "month");
+  const l = sessionStorage.getItem("targetDate")
+    ? moment(sessionStorage.getItem("targetDate"))
+    : moment().add(1, "month");
   useEffect(() => {
+    sessionStorage.setItem("targetDate", l.toString());
     const t = setInterval(() => {
       const now = moment();
       const duration: moment.Duration = moment.duration(l.diff(now));

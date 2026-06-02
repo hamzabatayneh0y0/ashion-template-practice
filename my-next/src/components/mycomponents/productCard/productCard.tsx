@@ -39,7 +39,7 @@ export default function ProductCard({
   const { state, dispatch } = useUser();
   const [fav, setfav] = useState(false);
   const [cart, setcart] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(state.logedin);
+  const [isLoggedIn] = useState(state.logedin);
   const t = useTranslations();
 
   useEffect(() => {

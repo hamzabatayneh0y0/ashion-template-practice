@@ -24,7 +24,7 @@ export default function Order({ products }: { products: productType[] }) {
 
   const [pay, setpay] = useState("PayPal");
   const cartProducts = products.filter((e) =>
-    state.products?.some((p) => p.productId === e.id && p.cart)
+    state.products?.some((p) => p.productId === e.id && p.cart),
   );
   let tSum: number = 0;
   const [mounted, setMounted] = useState(false);
@@ -98,7 +98,8 @@ export default function Order({ products }: { products: productType[] }) {
       <button
         type="submit"
         form="my-form"
-        className="bg-red-500 rounded-full cursor-pointer text-white py-2 px-6 flex items-center text-2xl w-fit m-auto"
+        disabled={tSum == 0 || state.logedin == false}
+        className={`${tSum == 0 ? "bg-gray-300" : ""} bg-red-500 rounded-full cursor-pointer text-white py-2 px-6 flex items-center text-2xl w-fit m-auto`}
       >
         {t("place_order")}
       </button>

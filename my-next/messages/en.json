@@ -318,5 +318,6 @@
   "loged in successfully": "loged in successfully",
 
   "User already exist": "User already exist",
-  "somthing went wrong": "somthing went wrong"
+  "somthing went wrong": "somthing went wrong",
+  "you need to logg in first": "you need to logg in first"
 }

@@ -39,10 +39,12 @@ export default function ProductCard({
   const { state, dispatch } = useUser();
   const [fav, setfav] = useState(false);
   const [cart, setcart] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(state.logedin);
   const t = useTranslations();
+
   useEffect(() => {
     setfav(
-      state.products?.some((e) => e.productId === product?.id && e.favorite)
+      state.products?.some((e) => e.productId === product?.id && e.favorite),
     );
     setcart(state.products?.some((e) => e.productId === product?.id && e.cart));
   }, [state.products, product?.id]);
@@ -86,7 +88,7 @@ export default function ProductCard({
           className={`${
             style.img
           } border-2 overflow-hidden flex items-center justify-center p-3 bg-white ${
-            row ? "basis-[50%] h-[200px]" : "h-[300px] w-full"
+            row ? "basis-[50%] h-full" : "h-[350px] w-full"
           } border-black relative`}
         >
           <Image
@@ -95,7 +97,7 @@ export default function ProductCard({
             loading="lazy"
             width={300}
             height={200}
-            style={{ height: "auto", width: "auto" }}
+            style={{ maxHeight: "100%" }}
           />
           <Label type={label} />
           <div
@@ -108,7 +110,10 @@ export default function ProductCard({
             />
             <GoHeart
               title="add to favourite"
-              onClick={handleFavorite}
+              onClick={() => {
+                if (isLoggedIn) handleFavorite();
+                else alert(t("you need to logg in first"));
+              }}
               className={`${
                 style.icon2
               } bg-white text-black  hover:text-red-500 ${
@@ -117,7 +122,10 @@ export default function ProductCard({
             />
             <MdOutlineShoppingBag
               title="add to cart"
-              onClick={handleCart}
+              onClick={() => {
+                if (isLoggedIn) handleCart();
+                else alert(t("you need to logg in first"));
+              }}
               className={`${
                 style.icon3
               } bg-white text-black  hover:text-red-500 ${

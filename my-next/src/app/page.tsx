@@ -60,7 +60,7 @@ export default async function Home() {
 
   return (
     <div className="Home">
-      <div className="homecategory flex flex-col lg:flex-row">
+      <div className="homecategory flex flex-col lg:flex-row  ">
         <div className="lg:basis-[50%] p-2">
           <HomeCategory
             classname="1"
@@ -93,7 +93,7 @@ export default async function Home() {
 
       <Trend />
 
-      <div className="discount container m-auto py-12 flex flex-col lg:flex-row">
+      <div className="discount flex flex-col lg:flex-row">
         <Image
           src={blog4}
           alt="blog5image"

@@ -48,14 +48,14 @@ export default function Collection() {
             }),
           ]}
         >
-          <CarouselContent className="">
+          <CarouselContent className="max-w-fit">
             {[1, 2, 3].map((_, i) => (
               <CarouselItem className="flex justify-center" key={i}>
                 <div className="max-w-fit">
-                  <p className="sm:text-2xl text-red-500">
+                  <p className="md:text-2xl text-red-500">
                     {t("chloeCollection")}
                   </p>
-                  <h1 className="font-[cookie,cursive] text-4xl sm:text-6xl my-3">
+                  <h1 className="font-[cookie,cursive] text-2xl md:text-6xl my-3">
                     {t("projectJacket")}
                   </h1>
                   <Link

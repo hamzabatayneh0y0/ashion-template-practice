@@ -18,7 +18,9 @@ export default function HomeCategory({ classname, title, disc, cat }: data) {
     <div
       className={`category bg-no-repeat bg-cover bg-center p-12 transition-all text-black flex flex-col justify-center ar:items-end w-full h-full ${i}`}
     >
-      <h2 className="text-6xl font-[cookie] lg:text-5xl">{t(title)}</h2>
+      <h2 className="text-5xl md:text-6xl  font-[cookie] lg:text-5xl">
+        {t(title)}
+      </h2>
       <p className="text-gray-400 mt-5 ar:text-black text-2xl mb-8 sm:max-w-1/2">
         {t(disc)}
       </p>

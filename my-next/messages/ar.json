@@ -314,5 +314,6 @@
   "loged in successfully": "تم تسجيل الدخول بنجاح",
 
   "User already exist": "المستخدم موجود بالفعل",
-  "somthing went wrong": "حدث خطأ ما"
+  "somthing went wrong": "حدث خطأ ما",
+  "you need to logg in firs": "يجب عليك تسجيل الدخول أولا"
 }

@@ -18,6 +18,7 @@ export default function Actions({ id }: { id: number }) {
   const [q, setQ] = useState(1);
   const [s, sets] = useState("");
   const [c, setc] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(state.logedin);
   const time = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -75,31 +76,33 @@ export default function Actions({ id }: { id: number }) {
 
       <span
         onClick={() => {
-          if (toast.current) {
-            toast.current.style.transitionDuration = "0s";
-
-            toast.current.style.transform = "translateX(-100%)";
-          }
-          if (time.current) {
-            clearTimeout(time.current);
-          }
-
-          dispatch({
-            type: "cart",
-            payload: { id, size: s, color: c, quantity: q },
-          });
-
-          requestAnimationFrame(() => {
+          if (isLoggedIn) {
             if (toast.current) {
-              toast.current.style.transitionDuration = "300ms";
+              toast.current.style.transitionDuration = "0s";
 
-              toast.current.style.transform = "translateX(100%)";
-              time.current = setTimeout(() => {
-                if (toast.current)
-                  toast.current.style.transform = "translateX(-100%)";
-              }, 1000);
+              toast.current.style.transform = "translateX(-100%)";
             }
-          });
+            if (time.current) {
+              clearTimeout(time.current);
+            }
+
+            dispatch({
+              type: "cart",
+              payload: { id, size: s, color: c, quantity: q },
+            });
+
+            requestAnimationFrame(() => {
+              if (toast.current) {
+                toast.current.style.transitionDuration = "300ms";
+
+                toast.current.style.transform = "translateX(100%)";
+                time.current = setTimeout(() => {
+                  if (toast.current)
+                    toast.current.style.transform = "translateX(-100%)";
+                }, 1000);
+              }
+            });
+          } else alert(t("you need to logg in first"));
         }}
         className={`bg-red-500 text-white rounded-full cursor-pointer select-none py-2 px-6 flex items-center text-2xl w-fit`}
       >
@@ -109,12 +112,14 @@ export default function Actions({ id }: { id: number }) {
       <span>
         <GoHeart
           role="img"
-          onClick={() =>
-            dispatch({
-              type: "favorite",
-              payload: { id, size: s, color: c, quantity: q },
-            })
-          }
+          onClick={() => {
+            if (isLoggedIn) {
+              dispatch({
+                type: "favorite",
+                payload: { id, size: s, color: c, quantity: q },
+              });
+            } else alert(t("you need to logg in first"));
+          }}
           className={`bg-white text-black hover:text-red-500 ${
             fav ? "text-red-500" : ""
           } rounded-full p-1 shadow-lg w-12 h-12 cursor-pointer `}

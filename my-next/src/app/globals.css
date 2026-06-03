@@ -52,7 +52,10 @@ html {
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --animate-moveDownUp: moveDownUp 3s  ease-in-out;
 }
+
 
 :root {
   --my-color: teal;
@@ -127,5 +130,22 @@ html {
 @layer base {
   * {
     @apply m-0 p-0 box-border;
+  }
+}
+@keyframes moveDownUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  16.67% {
+    transform: translateY(100px);
+  }
+
+  83.33% {
+    transform: translateY(100px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }

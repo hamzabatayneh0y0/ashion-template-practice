@@ -170,7 +170,7 @@ export default function MyAccount() {
   }, [cur]);
 
   return (
-    <div className="container m-auto px-3 py-12">
+    <div className="container m-auto px-3 py-12 overflow-hidden">
       <Title />
       <div className="p-2 border-b-2 border-gray-200">
         <Image

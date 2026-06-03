@@ -54,6 +54,14 @@ export default function FormCheckOut() {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setAlert(undefined);
+    }, 3000);
+
+    return () => clearTimeout(t);
+  }, [alert]);
+
   if (!mounted) return null;
   function handleChang(e: ChangeEvent<HTMLInputElement>) {
     const { name, value, checked } = e.target as HTMLInputElement;
@@ -148,12 +156,7 @@ export default function FormCheckOut() {
 
       {error && <Alert type="error" message={error} />}
       {alert && (
-        <div
-          onClick={() => {
-            setAlert(undefined);
-          }}
-          className="bg-black/50 fixed top-0 left-0 w-full h-full text-center flex justify-center items-center"
-        >
+        <div className="z-99 fixed top-0 left-1/2 animate-moveDownUp -translate-y-full -translate-x-1/2 text-center flex justify-center items-center">
           <div className="basis-[50%]">
             {" "}
             <Alert type="success" message={alert} />

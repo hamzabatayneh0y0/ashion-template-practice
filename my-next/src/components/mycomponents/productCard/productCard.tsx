@@ -106,7 +106,7 @@ export default function ProductCard({
             <MdOutlineZoomOutMap
               title="zoom"
               onClick={handleZoom}
-              className={`${style.icon1} bg-white text-black  rounded-full text-4xl p-1  w-[15%] h-[15%] cursor-pointer `}
+              className={`${style.icon1} bg-white text-black  rounded-full text-4xl p-1  w-[12%] h-[12%] cursor-pointer `}
             />
             <GoHeart
               title="add to favourite"
@@ -118,7 +118,7 @@ export default function ProductCard({
                 style.icon2
               } bg-white text-black  hover:text-red-500 ${
                 fav ? "text-red-500 " : ""
-              } rounded-full text-4xl p-1  w-[15%] h-[15%] cursor-pointer `}
+              } rounded-full text-4xl p-1  w-[12%] h-[12%]  cursor-pointer `}
             />
             <MdOutlineShoppingBag
               title="add to cart"
@@ -130,7 +130,7 @@ export default function ProductCard({
                 style.icon3
               } bg-white text-black  hover:text-red-500 ${
                 cart ? "text-red-500 " : ""
-              } rounded-full  text-4xl p-1  w-[15%] h-[15%] cursor-pointer`}
+              } rounded-full  text-4xl p-1  w-[12%] h-[12%]  cursor-pointer`}
             />
           </div>
         </div>

@@ -38,7 +38,7 @@ export default function Header() {
       <Image src={logo} alt={"logo"} width={150} className="" />
       <div
         ref={open}
-        className={` dark:bg-gray-900 bg-white max-lg:shadow-lgx p-5 flex grow lg:justify-between lg:items-center gap-8 text-2xl xl:text-3xl transition-all navlinks ${
+        className={` dark:bg-gray-900 bg-white max-lg:shadow-lgx p-5 flex grow lg:justify-between lg:items-center gap-8  xl:text-2xl transition-all navlinks ${
           style.navlinks
         } max-lg:w-[300px] ${appear ? style.show : " "} `}
       >
@@ -76,19 +76,19 @@ export default function Header() {
             }
           >
             <Link
-              className={`${style.link} ${style.pages} flex justify-between gap-1 items-center`}
+              className={`  flex justify-between gap-1 items-center`}
               href={""}
               onClick={() => {
                 setUl((prv) => !prv);
               }}
             >
               <span> {t("Pages")}</span>
-              <FaPlus className={`${style.plus} plus `} />
+              <FaPlus className={`${style.plus} plus  `} />
             </Link>
             <div
               className={`${style.tr} ${
                 ul ? style.openul : ""
-              }  transition-all  lg:absolute lg:left-0   lg:bg-gray-950 lg:text-white text-2xl font-normal z-[222] `}
+              }  transition-all  lg:absolute lg:left-0   lg:bg-gray-950 lg:text-white xl:text-2xl font-normal z-[222] `}
             >
               <ul className={`p-5 flex flex-col gap-4`}>
                 <Link

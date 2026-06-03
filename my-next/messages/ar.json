@@ -78,7 +78,8 @@
     "create_account": "إنشاء حساب؟",
     "cheque_payment": "الدفع بشيك",
     "paypal": "بايبال",
-    "place_order": "إتمام الطلب"
+    "place_order": "إتمام الطلب",
+    "Please log in to view your order": "الرجاء تسجيل الدخول لعرض طلبك"
   },
 
   "contact": {

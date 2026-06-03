@@ -9,7 +9,7 @@ import Alert from "@/components/mycomponents/formAletrt/formAlert";
 export default function FormCheckOut() {
   const t = useTranslations("checkoutform");
   const tgeneral = useTranslations();
-  const { state, dispatch } = useUser();
+  const { state } = useUser();
   const [show, setShow] = useState(false);
   const [alert, setAlert] = useState<string | undefined>(undefined);
   const [form, setForm] = useState({
@@ -88,22 +88,6 @@ export default function FormCheckOut() {
         } else {
           setError(undefined);
           setAlert(t("Done"));
-          if (!state.logedin) {
-            dispatch({
-              type: "register",
-              payload: {
-                first_name: form.first_name,
-                last_name: form.last_name,
-                phone: form.phone,
-                email: form.email,
-                password: form.password,
-                country: form.country,
-                address: form.address,
-                apartment: form.apartment,
-                city: form.city,
-              },
-            });
-          }
         }
       }}
     >
@@ -147,10 +131,10 @@ export default function FormCheckOut() {
                     ? "text"
                     : "password"
                   : key === "account" || key === "note"
-                  ? "checkbox"
-                  : key === "phone"
-                  ? "tel"
-                  : "text"
+                    ? "checkbox"
+                    : key === "phone"
+                      ? "tel"
+                      : "text"
               }
             />
             {key === "account" || key === "note" ? (

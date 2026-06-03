@@ -88,7 +88,8 @@
     "create_account": "Create an account?",
     "cheque_payment": "Cheque payment",
     "paypal": "PayPal",
-    "place_order": "Place Order"
+    "place_order": "Place Order",
+    "Please log in to view your order": "Please log in to view your order"
   },
 
   "contact": {

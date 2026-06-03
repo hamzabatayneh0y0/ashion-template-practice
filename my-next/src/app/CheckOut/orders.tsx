@@ -42,31 +42,29 @@ export default function Order({ products }: { products: productType[] }) {
       <li className="flex justify-between items-center text-2xl font-bold pb-2 border-b-2 border-gray-400">
         <span>{t("product")}</span> <span>{t("total")}</span>
       </li>
-      <ol className="list-decimal" style={{ listStyle: "initial" }}>
-        {cartProducts.map((e, i) => {
-          const quantity =
-            state.products.find((p) => p.productId === e.id)?.quantity || 0;
-          tSum += quantity * e.price;
-          return (
-            <li key={e.id} className="flex justify-between items-center ">
-              <span>
-                {i + 1} {e.title} ({quantity})
-              </span>
-              <Money m={quantity * e.price} />
-            </li>
-          );
-        })}
-      </ol>
+      {state.logedin ? (
+        <ol className="list-decimal" style={{ listStyle: "initial" }}>
+          {cartProducts.map((e, i) => {
+            const quantity =
+              state.products.find((p) => p.productId === e.id)?.quantity || 0;
+            tSum += quantity * e.price;
+            return (
+              <li key={e.id} className="flex justify-between items-center ">
+                <span>
+                  {i + 1} {e.title} ({quantity})
+                </span>
+                <Money m={quantity * e.price} />
+              </li>
+            );
+          })}
+        </ol>
+      ) : (
+        <p>{t("Please log in to view your order")}</p>
+      )}
       <li className="flex justify-between items-center text-2xl pb-2 font-bold border-b-2 border-gray-400">
         <span>{t("total")}</span> <Money m={tSum} />
       </li>
-      {!state.logedin && (
-        <li>
-          <label className="flex gap-2 cursor-pointer">
-            <input type="checkbox" /> {t("create_account")}
-          </label>
-        </li>
-      )}
+
       <li className="cursor-pointer">
         <label className="flex gap-2 cursor-pointer">
           <input
@@ -99,7 +97,7 @@ export default function Order({ products }: { products: productType[] }) {
         type="submit"
         form="my-form"
         disabled={tSum == 0 || state.logedin == false}
-        className={`${tSum == 0 ? "bg-gray-300" : ""} bg-red-500 rounded-full cursor-pointer text-white py-2 px-6 flex items-center text-2xl w-fit m-auto`}
+        className={` disabled:bg-gray-300 disabled:cursor-not-allowed  bg-red-500 rounded-full cursor-pointer text-white py-2 px-6 flex items-center text-2xl w-fit m-auto`}
       >
         {t("place_order")}
       </button>

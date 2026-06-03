@@ -69,7 +69,7 @@ export default function reducer(state: StateType, action: ActionType) {
       }
 
       const cleanedProducts = updatedProducts.filter(
-        (e) => e.favorite || e.cart
+        (e) => e.favorite || e.cart,
       );
       const newstate = { ...state, products: cleanedProducts };
       localStorage.setItem("user", JSON.stringify(newstate));
@@ -107,7 +107,7 @@ export default function reducer(state: StateType, action: ActionType) {
         updatedProducts = [...state.products, product];
       }
       const cleanedProducts = updatedProducts.filter(
-        (e) => e.favorite || e.cart
+        (e) => e.favorite || e.cart,
       );
 
       const newstate = { ...state, products: cleanedProducts };
